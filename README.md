@@ -13,6 +13,9 @@
 
 > TelemachusSwift is a Swift Package to help developers build Companion-Apps and other applications for KSP's 'Telemachus' Mod. The Package provides a wrapper for the websocket of Telemachus
 
+- [Installation Instructions](#installation)
+- [Getting Started](#getting-started)
+
 ## Author
 
 👤 **Noah Kamara**
