@@ -29,5 +29,39 @@ Contributions, issues and feature requests are welcome!<br />Feel free to check 
 
 Give a ⭐️ if this project helped you!
 
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
+## Installation
+- [Package Dependency](#package-dependency)
+- [Swift Package Manager](#swift-package-manager)
+
+### Add as Package Dependency
+See Apples [Documentation](https://developer.apple.com/documentation/xcode/adding_package_dependencies_to_your_app)
+
+
+### Swift Package Manager
+
+"The [Swift Package Manager](https://swift.org/package-manager/) is a tool for managing the distribution of Swift code. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies."
+
+To integrate `FeedKit` into your project, specify it in your `Package.swift` file:
+
+```swift
+let package = Package(
+    name: "MyApp",
+    dependencies: [
+        .Package(url: "https://github.com/noahkamara/TelemachusSwift.git", majorVersion: 1)
+    ]
+)
+```
+
+Then run:
+
+```bash
+$ swift build
+```
+
+Or, alternatively:
+
+```bash
+$ swift package generate-xcodeproj
+```
+
+## Getting Started
