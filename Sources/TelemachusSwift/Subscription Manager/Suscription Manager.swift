@@ -31,6 +31,10 @@ class SubscriptionManager: WebSocketDelegate, WebSocketPongDelegate {
     /// Gets called whenever the client receives data from Telemachus Server
     public var onTelemachusData: ((TelemachusData) -> Void)?
     
+    
+    /// The current URL. will be nil if not connected
+    public var currentUrl: URL? = nil
+    
     /// Connect to url
     func connect(_ ip: String, _ port: Int) {
         self.url.scheme = "ws"
@@ -80,6 +84,7 @@ class SubscriptionManager: WebSocketDelegate, WebSocketPongDelegate {
     /// - Parameter socket: Websocket
     internal func websocketDidConnect(socket: WebSocketClient) {
         self.log(.info, "connected to \(websocket.currentURL)")
+        self.currentUrl = websocket.currentURL
         self.onConnect?()
     }
     
@@ -94,6 +99,7 @@ class SubscriptionManager: WebSocketDelegate, WebSocketPongDelegate {
             self.log(.info, "disconnected from \(url.url!)")
         }
         self.log(.debug, "disconnected URL: \(url.url!) ERROR: \(error?.localizedDescription ?? "NO ERROR")")
+        self.currentUrl = nil
         self.onDisconnect?(error)
     }
     
