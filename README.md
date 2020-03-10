@@ -65,3 +65,21 @@ $ swift package generate-xcodeproj
 ```
 
 ## Getting Started
+### Initiate the Subscription Manager
+To connect to the Telemachus Server just call the `connect()`method with the ip and port of the websocket. You can also declare what should happen when the client connects to a server: with the `subManager.onConnect()`method
+```swift
+let subManager = SubscriptionManager()
+subManager.connect("127.0.0.1", 8085)
+subManager.onConnect = { 
+  print("connected to \(subManager.currentUrl)")
+}
+```
+### Handle incoming Telemachus Data
+To handle the incoming data:
+```swift
+var data: TelemachusData!
+let subManager = SubscriptionManager()
+subManager.onTelemachusData = { (tData: TelemachusData) in
+  self.data = tData
+}
+```
