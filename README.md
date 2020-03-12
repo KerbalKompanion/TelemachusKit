@@ -1,9 +1,9 @@
-<h1 align="center">Welcome to TelemachusSwift 👋</h1>
+<h1 align="center">Welcome to TelemachusKit 👋</h1>
 <p>
-  <a href="https://github.com/noahkamara/TelemachusSwift/releases/latest" target="_blank">
+  <a href="https://github.com/noahkamara/TelemachusKit/releases/latest" target="_blank">
     <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   </a>
-  <a href="https://github.com/noahkamara/TelemachusSwift/wiki" target="_blank">
+  <a href="https://github.com/noahkamara/TelemachusKit/wiki" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
   <a href="https://twitter.com/noahkamara99" target="_blank">
@@ -11,7 +11,7 @@
   </a>
 </p>
 
-> TelemachusSwift is a Swift Package to help developers build Companion-Apps and other applications for KSP's 'Telemachus' Mod. The Package provides a wrapper for the websocket of Telemachus
+> TelemachusKit is a Swift Package to help developers build Companion-Apps and other applications for KSP's 'Telemachus' Mod. The Package provides a wrapper for the websocket of Telemachus
 
 - [Installation Instructions](#installation)
 - [Getting Started](#getting-started)
@@ -26,7 +26,7 @@
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/noahkamara/TelemachusSwift/issues). 
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/noahkamara/TelemachusKit/issues). 
 
 ## Show your support
 
@@ -50,7 +50,7 @@ To integrate `FeedKit` into your project, specify it in your `Package.swift` fil
 let package = Package(
     name: "MyApp",
     dependencies: [
-        .Package(url: "https://github.com/noahkamara/TelemachusSwift.git", majorVersion: 1)
+        .Package(url: "https://github.com/noahkamara/TelemachusKit.git", majorVersion: 1)
     ]
 )
 ```

@@ -1,7 +1,7 @@
 import XCTest
 
-import TelemachusSwiftTests
+import TelemachusKitTests
 
 var tests = [XCTestCaseEntry]()
-tests += TelemachusSwiftTests.allTests()
+tests += TelemachusKitTests.allTests()
 XCTMain(tests)
