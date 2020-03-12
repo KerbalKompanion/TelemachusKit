@@ -8,7 +8,7 @@
 import Foundation
 import Starscream
 
-class SubscriptionManager: WebSocketDelegate, WebSocketPongDelegate {
+public class SubscriptionManager: WebSocketDelegate, WebSocketPongDelegate {
     /// The reference to the Websocket
        private var websocket: WebSocket!
     
