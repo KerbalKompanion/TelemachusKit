@@ -20,19 +20,15 @@ public class TelemachusClient {
     /// The SocketDelegate
     private let socket: SocketDelegate
     
-    init(_ url: URL? = nil) {
+    public init() {
         self.socket = SocketDelegate()
         self.socket.onConnect           = self.onConnect
         self.socket.onDisconnect        = self.onDisconnect
         self.socket.onTelemachusData    = self.onTelemachusData
-        
-        if url != nil {
-            
-        }
     }
     
     /// Connect to url
-    func connect(_ ip: String, _ port: Int) {
+    public func connect(_ ip: String, _ port: Int) {
         var url: URLComponents = URLComponents()
         url.scheme = "ws"
         url.host = "192.168.178.23"
@@ -43,21 +39,21 @@ public class TelemachusClient {
     
     /// Sends command to Telemachus Server
     /// - Parameter keys: Set of ApiKeys
-    func sendCommand(_ command: Command.Key, _ param: Command.Parameter) {
+    public func sendCommand(_ command: Command.Key, _ param: Command.Parameter) {
         let message: String = "{\"run\":[\(command)]}"
         self.socket.write(string: message)
     }
     
     /// Subscibes the Client to the given set of ApiKeys
     /// - Parameter keys: Set of ApiKeys
-    func subscribeTo(_ keys: [ApiKey]) {
+    public func subscribeTo(_ keys: [ApiKey]) {
         let message: String = "{\"+\":\(keys)}"
         self.socket.write(string: message)
     }
     
     /// Sets the rate at which the websocket responds with data
     /// - Parameter ms: interval in miliseconds Int
-    func setRate(_ ms: Int) {
+    public func setRate(_ ms: Int) {
         let message: String = "{\"rate\":\(ms)}"
         self.socket.write(string: message)
     }

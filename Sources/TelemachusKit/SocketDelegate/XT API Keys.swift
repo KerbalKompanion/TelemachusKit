@@ -8,7 +8,7 @@
 import Foundation
 
 extension TelemachusClient {
-    enum ApiKey: CaseIterable {
+    public enum ApiKey: CaseIterable {
         static let universalTime = "t.universalTime"
         static let missionTime = "v.missionTime"
         

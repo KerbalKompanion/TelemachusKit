@@ -8,8 +8,8 @@
 import Foundation
 
 extension TelemachusClient {
-    class Command {
-        enum Key {
+    public class Command {
+        public enum Key {
             static let throttle      = "f.setThrottle"
             static let throttleUp    = "f.throttleUp"
             static let throttleDown  = "f.throttleDown"
@@ -37,7 +37,7 @@ extension TelemachusClient {
             static let actionGroup10 = "f.ag10"
         }
         
-        enum Parameter {
+        public enum Parameter {
             static let on   = "true"
             static let off  = "true"
         }

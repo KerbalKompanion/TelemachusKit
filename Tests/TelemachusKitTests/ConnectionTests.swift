@@ -1,5 +1,5 @@
 import XCTest
-@testable import TelemachusKit
+import TelemachusKit
 
 final class ConnectionTests: XCTestCase {
     let ip: String = "0.0.0.0"
