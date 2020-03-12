@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TelemachusData {
+public class TelemachusData {
     private var formatter: DateFormatter {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd HH:mm"

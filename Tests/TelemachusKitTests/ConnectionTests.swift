@@ -6,7 +6,7 @@ final class ConnectionTests: XCTestCase {
     let port: Int = 8085
     func testConnect() {
         let expect = expectation(description: "Connected Successfully")
-        let sm = SubscriptionManager()
+        let sm = TelemachusClient()
         sm.onConnect = {
             expect.fulfill()
         }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension SubscriptionManager {
+extension TelemachusClient {
     class Command {
         enum Key {
             static let throttle      = "f.setThrottle"
