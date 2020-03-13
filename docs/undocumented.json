@@ -1,0 +1,313 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/Models/JsonModel.swift",
+      "line": 10,
+      "symbol": "JsonModel",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/Models/TelemachusData.swift",
+      "line": 10,
+      "symbol": "TelemachusData",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/Models/TelemachusData.swift",
+      "line": 79,
+      "symbol": "TelemachusData.GameStatus.inFlight",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/Models/TelemachusData.swift",
+      "line": 80,
+      "symbol": "TelemachusData.GameStatus.paused",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/Models/TelemachusData.swift",
+      "line": 81,
+      "symbol": "TelemachusData.GameStatus.noPower",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/Models/TelemachusData.swift",
+      "line": 82,
+      "symbol": "TelemachusData.GameStatus.disabled",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/Models/TelemachusData.swift",
+      "line": 83,
+      "symbol": "TelemachusData.GameStatus.notFound",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/Models/TelemachusData.swift",
+      "line": 84,
+      "symbol": "TelemachusData.GameStatus.error",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/Models/TelemachusData.swift",
+      "line": 135,
+      "symbol": "TelemachusData.Vessel.Attitude.roll",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/Models/TelemachusData.swift",
+      "line": 136,
+      "symbol": "TelemachusData.Vessel.Attitude.heading",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/Models/TelemachusData.swift",
+      "line": 137,
+      "symbol": "TelemachusData.Vessel.Attitude.pitch",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/Models/TelemachusData.swift",
+      "line": 150,
+      "symbol": "TelemachusData.Vessel.Ressource.liquid",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/SocketDelegate/XT API Keys.swift",
+      "line": 11,
+      "symbol": "TelemachusClient.ApiKey",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/SocketDelegate/XT Command.swift",
+      "line": 11,
+      "symbol": "TelemachusClient.Command",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/SocketDelegate/XT Command.swift",
+      "line": 12,
+      "symbol": "TelemachusClient.Command.Key",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/SocketDelegate/XT Command.swift",
+      "line": 13,
+      "symbol": "TelemachusClient.Command.Key.throttle",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/SocketDelegate/XT Command.swift",
+      "line": 14,
+      "symbol": "TelemachusClient.Command.Key.throttleUp",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/SocketDelegate/XT Command.swift",
+      "line": 15,
+      "symbol": "TelemachusClient.Command.Key.throttleDown",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/SocketDelegate/XT Command.swift",
+      "line": 16,
+      "symbol": "TelemachusClient.Command.Key.throttleFull",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/SocketDelegate/XT Command.swift",
+      "line": 17,
+      "symbol": "TelemachusClient.Command.Key.throttleZero",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/SocketDelegate/XT Command.swift",
+      "line": 19,
+      "symbol": "TelemachusClient.Command.Key.rcs",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/SocketDelegate/XT Command.swift",
+      "line": 20,
+      "symbol": "TelemachusClient.Command.Key.sas",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/SocketDelegate/XT Command.swift",
+      "line": 22,
+      "symbol": "TelemachusClient.Command.Key.light",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/SocketDelegate/XT Command.swift",
+      "line": 23,
+      "symbol": "TelemachusClient.Command.Key.gear",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/SocketDelegate/XT Command.swift",
+      "line": 24,
+      "symbol": "TelemachusClient.Command.Key.brake",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/SocketDelegate/XT Command.swift",
+      "line": 26,
+      "symbol": "TelemachusClient.Command.Key.abort",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/SocketDelegate/XT Command.swift",
+      "line": 28,
+      "symbol": "TelemachusClient.Command.Key.actionGroup01",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/SocketDelegate/XT Command.swift",
+      "line": 29,
+      "symbol": "TelemachusClient.Command.Key.actionGroup02",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/SocketDelegate/XT Command.swift",
+      "line": 30,
+      "symbol": "TelemachusClient.Command.Key.actionGroup03",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/SocketDelegate/XT Command.swift",
+      "line": 31,
+      "symbol": "TelemachusClient.Command.Key.actionGroup04",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/SocketDelegate/XT Command.swift",
+      "line": 32,
+      "symbol": "TelemachusClient.Command.Key.actionGroup05",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/SocketDelegate/XT Command.swift",
+      "line": 33,
+      "symbol": "TelemachusClient.Command.Key.actionGroup06",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/SocketDelegate/XT Command.swift",
+      "line": 34,
+      "symbol": "TelemachusClient.Command.Key.actionGroup07",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/SocketDelegate/XT Command.swift",
+      "line": 35,
+      "symbol": "TelemachusClient.Command.Key.actionGroup08",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/SocketDelegate/XT Command.swift",
+      "line": 36,
+      "symbol": "TelemachusClient.Command.Key.actionGroup09",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/SocketDelegate/XT Command.swift",
+      "line": 37,
+      "symbol": "TelemachusClient.Command.Key.actionGroup10",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/SocketDelegate/XT Command.swift",
+      "line": 40,
+      "symbol": "TelemachusClient.Command.Parameter",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/TelemachusClient.swift",
+      "line": 10,
+      "symbol": "TelemachusClient",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/TelemachusClient.swift",
+      "line": 10,
+      "symbol": "TelemachusClient",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/TelemachusClient.swift",
+      "line": 11,
+      "symbol": "TelemachusClient",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/TelemachusClient.swift",
+      "line": 23,
+      "symbol": "TelemachusClient.data",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/TelemachusClient.swift",
+      "line": 24,
+      "symbol": "TelemachusClient.isConnected",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/TelemachusClient.swift",
+      "line": 25,
+      "symbol": "TelemachusClient.currentURL",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit/Sources/TelemachusKit/TelemachusClient.swift",
+      "line": 27,
+      "symbol": "TelemachusClient.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/noahkamara/Library/Mobile Documents/com~apple~CloudDocs/Projekte/Developer/Swift/Telemachus/TelemachusKit"
+}
