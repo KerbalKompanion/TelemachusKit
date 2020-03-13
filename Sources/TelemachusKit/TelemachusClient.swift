@@ -53,6 +53,22 @@ public class TelemachusClient: ObservableObject {
         self.socket.connect(ip, port)
     }
     
+    /// Connect to url with Completion
+    public func connect(_ ip: String, _ port: Int, completion: () -> Void) {
+        var url: URLComponents = URLComponents()
+        url.scheme = "ws"
+        url.host = "192.168.178.23"
+        url.path = "/datalink"
+        url.port = 8085
+        if url.url != nil {
+            // TODO: Throw error here
+        }
+        print("HIS")
+        self.socket.connect(ip, port) {
+            completion()
+        }
+    }
+    
     /// Disconnects from Server
     public func disconnect() {
         self.socket.disconnect()

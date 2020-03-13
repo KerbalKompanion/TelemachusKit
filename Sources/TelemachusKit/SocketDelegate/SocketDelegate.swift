@@ -50,6 +50,28 @@ class SocketDelegate: WebSocketDelegate, WebSocketPongDelegate {
         websocket.connect()
     }
     
+    /// Connect to url with Completion
+    func connect(_ ip: String, _ port: Int, completion: () -> Void ) {
+        self.url.scheme = "ws"
+        self.url.host = "192.168.178.23"
+        self.url.path = "/datalink"
+        self.url.port = 8085
+        
+        self.websocket = WebSocket(url: self.url.url!)
+        websocket.delegate = self
+        websocket.disableSSLCertValidation = true
+        websocket.enableCompression = false
+        
+        self.log(.info, "connecting to \(url.url!)")
+        websocket.connect()
+        while true {
+            if websocket.isConnected {
+                completion()
+                break
+            }
+        }
+    }
+    
     
     /// Disconnect from Server
     func disconnect() {
@@ -61,6 +83,7 @@ class SocketDelegate: WebSocketDelegate, WebSocketPongDelegate {
     /// Sends the String to the Server
     /// - Parameter string: The String to be sent
     func write(string: String) {
+        self.websocket.write(string: string)
         self.log(.info, "Sent message (String)")
         self.log(.debug, "Sent message (String): \(string)")
         self.onConnect?()
@@ -100,12 +123,21 @@ class SocketDelegate: WebSocketDelegate, WebSocketPongDelegate {
             
         }
         
+        
         if let data = text.data(using: .utf8) {
             do {
-                let json = try JSONDecoder().decode(JsonModel.self, from: data)
-                self.onTelemachusData?(TelemachusData(json))
+                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                    if let gameStatus = json["p.paused"] as? Int {
+                        print(gameStatus)
+                    }
+                }
+                let json_model = try JSONDecoder().decode(JsonModel.self, from: data)
+                self.onTelemachusData?(TelemachusData(json_model))
             } catch let error {
                 self.log(.error, "\(error)")
+                let tData = TelemachusData()
+                tData.gameStatus = .error
+                self.onTelemachusData?(tData)
             }
         }
         

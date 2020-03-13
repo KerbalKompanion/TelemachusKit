@@ -34,9 +34,20 @@ public class TelemachusData {
         self.vessel.name                       = "realName"
         self.vessel.altitude                   = json.altitude
         self.vessel.heightFromTerrain          = json.heightFromTerrain
-        self.vessel.gear                       = json.gear
-        self.vessel.light                      = json.light
-        self.vessel.brake                      = json.brake
+        switch json.gear {
+            case .bool(let value): self.vessel.gear = value
+            default: break
+        }
+        
+        switch json.light {
+            case .bool(let value): self.vessel.gear = value
+            default: break
+        }
+        
+        switch json.brake {
+            case .bool(let value): self.vessel.gear = value
+            default: break
+        }
         
         self.vessel.attitude.roll              = json.roll
         self.vessel.attitude.heading           = json.heading

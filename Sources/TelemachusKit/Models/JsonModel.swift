@@ -7,15 +7,15 @@
 
 import Foundation
 
-public struct JsonModel: Codable {
+public struct JsonModel: Decodable {
     let gameStatus: Int //p.paused
     let universalTime: Double
     let missionTime: Double
     let altitude: Double
     let heightFromTerrain: Double
-    let gear: Bool
-    let light: Bool
-    let brake: Bool
+    let gear: QuantumValue
+    let light: QuantumValue
+    let brake: QuantumValue
     let roll: Double
     let heading: Double
     let pitch: Double
@@ -51,5 +51,26 @@ public struct JsonModel: Codable {
         case targetDistance = "tar.distance"
         case targetVelocity = "tar.o.velocity"
         case targetRelativeVelocity = "tar.o.relativeVelocity"
+    }
+    
+}
+enum QuantumValue: Decodable {
+    case bool(Bool), int(Int)
+    init(from decoder: Decoder) throws {
+        if let bool = try? decoder.singleValueContainer().decode(Bool.self) {
+            self = .bool(bool)
+            return
+        }
+
+        if let int = try? decoder.singleValueContainer().decode(Int.self) {
+            self = .int(int)
+            return
+        }
+
+        throw QuantumError.missingValue
+    }
+
+    enum QuantumError:Error {
+        case missingValue
     }
 }
