@@ -56,7 +56,15 @@ public class TelemachusClient: ObservableObject {
         url.host = "192.168.178.23"
         url.path = "/datalink"
         url.port = 8085
+        if url.url != nil {
+            // TODO: Throw error here
+        }
         self.socket.connect(ip, port)
+    }
+    
+    /// Disconnects from Server
+    public func disconnect() {
+        self.socket.disconnect()
     }
     
     /// Sends command to Telemachus Server

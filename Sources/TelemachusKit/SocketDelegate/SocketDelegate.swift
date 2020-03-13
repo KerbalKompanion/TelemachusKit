@@ -50,6 +50,12 @@ class SocketDelegate: WebSocketDelegate, WebSocketPongDelegate {
         websocket.connect()
     }
     
+    
+    /// Disconnect from Server
+    func disconnect() {
+        websocket.disconnect()
+    }
+    
     /// Sends the String to the Server
     /// - Parameter string: The String to be sent
     func write(string: String) {
