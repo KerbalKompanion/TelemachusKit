@@ -8,35 +8,35 @@
 import Foundation
 
 extension TelemachusClient {
-    public enum ApiKey: CaseIterable {
-        static let gameStatus = "p.paused"
-        static let universalTime = "t.universalTime"
-        static let missionTime = "v.missionTime"
+    public enum ApiKey: String, CaseIterable {
+        case gameStatus = "p.paused"
+        case universalTime = "t.universalTime"
+        case missionTime = "v.missionTime"
         
-        static let heightFromTerrain = "v.heightFromTerrain"
-        static let altitude = "v.altitude"
+        case heightFromTerrain = "v.heightFromTerrain"
+        case altitude = "v.altitude"
         
-        static let verticalSpeed = "v.verticalSpeed"
-        static let surfaceVelocity = "v.surfaceVelocity"
-        
-        
-        static let gearValue = "v.gearValue"
-        static let brakeValue = "v.brakeValue"
-        static let lightValue = "v.lightValue"
+        case verticalSpeed = "v.verticalSpeed"
+        case surfaceVelocity = "v.surfaceVelocity"
         
         
-        static let heading = "n.heading"
-        static let roll = "n.roll"
-        static let pitch = "n.pitch"
+        case gearValue = "v.gearValue"
+        case brakeValue = "v.brakeValue"
+        case lightValue = "v.lightValue"
         
-        static let liquidFuelCurrent = "r.resource[LiquidFuel]"
-        static let liquidFuelMax = "r.resourceMax[LiquidFuel]"
         
-        static let targetName = "tar.name"
-        static let targetType = "tar.type"
-        static let targetDistance = "tar.distance"
-        static let targetVelocity = "tar.o.velocity"
-        static let targetRelativeVelocity = "tar.o.relativeVelocity"
+        case heading = "n.heading"
+        case roll = "n.roll"
+        case pitch = "n.pitch"
+        
+        case liquidFuelCurrent = "r.resource[LiquidFuel]"
+        case liquidFuelMax = "r.resourceMax[LiquidFuel]"
+        
+        case targetName = "tar.name"
+        case targetType = "tar.type"
+        case targetDistance = "tar.distance"
+        case targetVelocity = "tar.o.velocity"
+        case targetRelativeVelocity = "tar.o.relativeVelocity"
         
     }
 }
