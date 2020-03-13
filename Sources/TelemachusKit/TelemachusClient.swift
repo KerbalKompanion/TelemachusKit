@@ -8,7 +8,7 @@
 import Foundation
 import Starscream
 
-public class TelemachusClient {
+public class TelemachusClient: ObservableObject {
     
     /// Gets called upon establishing a connection with a server
     public var onConnect: (() -> Void)?
@@ -20,11 +20,33 @@ public class TelemachusClient {
     /// The SocketDelegate
     private let socket: SocketDelegate
     
+    @Published var data: TelemachusData = TelemachusData()
+    @Published var isConnected: Bool = false
+    @Published var currentURL: URL? = nil
+    
     public init() {
         self.socket = SocketDelegate()
-        self.socket.onConnect           = self.onConnect
-        self.socket.onDisconnect        = self.onDisconnect
-        self.socket.onTelemachusData    = self.onTelemachusData
+        self.socket.onConnect = {
+            DispatchQueue.main.async
+            {
+                self.isConnected = false
+                    
+            }
+            self.isConnected = true
+            self.onConnect?()
+        }
+        self.socket.onDisconnect = { (error: Error?) in
+            DispatchQueue.main.async {
+                self.isConnected = false
+            }
+            self.onDisconnect?(error)
+        }
+        self.socket.onTelemachusData = { (data: TelemachusData) in
+            DispatchQueue.main.async {
+                self.data = data
+            }
+            self.onTelemachusData?(data)
+        }
     }
     
     /// Connect to url
