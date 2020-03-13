@@ -68,7 +68,7 @@ public class TelemachusClient: ObservableObject {
     /// Subscibes the Client to the given set of ApiKeys
     /// - Parameter keys: Set of ApiKeys
     public func subscribeTo(_ keys: [ApiKey]) {
-        let message: String = "{\"+\":\(keys)}"
+        let message: String = "{\"+\":\(keys.map({$0.rawValue}))}"
         self.socket.write(string: message)
     }
     
