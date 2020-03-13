@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct JsonModel: Codable {
+public struct JsonModel: Codable {
+    let gameStatus: Int //p.paused
     let universalTime: Double
     let missionTime: Double
     let altitude: Double
@@ -30,6 +31,7 @@ struct JsonModel: Codable {
     
     
     enum CodingKeys: String, CodingKey {
+        case gameStatus = "p.paused"
         case universalTime = "t.universalTime"
         case missionTime =  "v.missionTime"
         case altitude = "v.altitude"
