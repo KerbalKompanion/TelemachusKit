@@ -20,9 +20,9 @@ public class TelemachusClient: ObservableObject {
     /// The SocketDelegate
     private let socket: SocketDelegate
     
-    @Published var data: TelemachusData = TelemachusData()
-    @Published var isConnected: Bool = false
-    @Published var currentURL: URL? = nil
+    @Published public var data: TelemachusData = TelemachusData()
+    @Published public var isConnected: Bool = false
+    @Published public var currentURL: URL? = nil
     
     public init() {
         self.socket = SocketDelegate()
