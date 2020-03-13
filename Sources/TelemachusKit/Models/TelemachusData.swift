@@ -50,28 +50,28 @@ public class TelemachusData {
     }
     
     /// Game Status of TelemachusAntenna
-    var gameStatus: GameStatus                      = .error
+    public var gameStatus: GameStatus                      = .error
     
     /// The passed time of the game save (in seconds)
     var universalTimeInterval: TimeInterval         = 0
     
     /// The universalTime relative to the reference Date
-    var universalTime: Date {
+    public var universalTime: Date {
         get { return Date(timeInterval: universalTimeInterval, since: referenceDate) }
     }
     
     /// The passed time of the current mission (in seconds)
     var missionTimeInterval: TimeInterval = 0
     /// The missionTime relative to the reference Date
-    var missionTime: Date {
+    public var missionTime: Date {
         get { return Date(timeInterval: missionTimeInterval, since: referenceDate) }
     }
     
     /// Information about the current Vessel
-    var vessel: Vessel                  = Vessel()
+    public var vessel: Vessel                  = Vessel()
     
     /// Information about the Vessel's target
-    var target: Target?                 = nil
+    public var target: Target?                 = nil
     
     
     /// Enum representing the Game Status
@@ -88,75 +88,75 @@ public class TelemachusData {
     public struct Vessel {
         
         /// Returns true if the remaining liquid fuel is below 10% of the max fuel
-        var lowFuelWarning: Bool {
+        public var lowFuelWarning: Bool {
             get { return (ressource.liquid.current / ressource.liquid.max < 0.1) }
         }
         /// Returns true if the remaining liquid fuel is below 50% of the max fuel
-        var lowAltitudeWarning: Bool {
+        public var lowAltitudeWarning: Bool {
             get { return (heightFromTerrain < 50 && gear == false) }
         }
         
         /// The name of the current vessel
-        var name: String                = ""
+        public var name: String                = ""
         
         /// The altitude relative to sea level
-        var altitude: Double            = 0.0
+        public var altitude: Double            = 0.0
         
         /// Altitude relative to the terrain height
-        var heightFromTerrain: Double   = 0.0
+        public var heightFromTerrain: Double   = 0.0
         
         /// Status of the gear
         /// true: Gear down
         /// false: Gear up
-        var gear: Bool                  = false
+        public var gear: Bool                  = false
         
         /// Status of the light
         /// true: lights on
         /// false: lights off
-        var light: Bool                 = false
+        public var light: Bool                 = false
         
         /// Status of the brakes
         /// true: brakes engaged
         /// false: brakes disengaged
-        var brake: Bool                 = false
+        public var brake: Bool                 = false
         
         /// The attitude (roll, pitch, heading)
-        var attitude: Attitude          = Attitude()
+        public var attitude: Attitude          = Attitude()
         
         /// The Speed (vertical, surface)
-        var speed: Speed                = Speed()
+        public var speed: Speed                = Speed()
         
         /// Info about ressources
-        var ressource: Ressource        = Ressource()
+        public var ressource: Ressource        = Ressource()
         
         
         /// Attitude Struct
         public struct Attitude {
-            var roll: Double            = 0.0
-            var heading: Double         = 0.0
-            var pitch: Double           = 0.0
+            public var roll: Double            = 0.0
+            public var heading: Double         = 0.0
+            public var pitch: Double           = 0.0
         }
         
         /// Speed Struct
         public struct Speed {
             /// vertical speed (difference in altitude)
-            var vertical: Double        = 0.0
+            public var vertical: Double        = 0.0
             /// surface speed
-            var surface: Double         = 0.0
+            public var surface: Double         = 0.0
         }
         
         /// Ressource Struct
         public struct Ressource {
-            var liquid: Fuel            = Fuel()
+            public var liquid: Fuel            = Fuel()
             
             /// Information about a fuel
             struct Fuel {
                 /// Current fuel amount
-                var current: Double     = 0.0
+                public var current: Double     = 0.0
                 /// maximum fuel amount
-                var max: Double         = 0.0
+                public var max: Double         = 0.0
                 /// percentage of fuel left (relative to max)
-                var remaining: Double {
+                public var remaining: Double {
                    get { return (current / max) }
                 }
             }
@@ -167,14 +167,14 @@ public class TelemachusData {
     /// Target Struct
     public struct Target {
         /// Name of the target
-        var name: String
+        public var name: String
         /// Type of the target
-        var type: String
+        public var type: String
         /// Distance from the target
-        var distance: Double
+        public var distance: Double
         /// Targets velocity
-        var velocity: Double
+        public var velocity: Double
         /// Targets velocity relative to current vessel
-        var relativeVelocity: Double
+        public var relativeVelocity: Double
     }
 }
