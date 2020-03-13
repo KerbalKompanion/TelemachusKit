@@ -61,7 +61,8 @@ class SocketDelegate: WebSocketDelegate, WebSocketPongDelegate {
     /// Sends the String to the Server
     /// - Parameter string: The String to be sent
     func write(string: String) {
-        self.log(.info, "sent message")
+        self.log(.info, "Sent message (String)")
+        self.log(.debug, "Sent message (String): \(string)")
         self.onConnect?()
     }
         
