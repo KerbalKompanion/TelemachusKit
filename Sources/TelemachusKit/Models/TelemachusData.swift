@@ -150,7 +150,7 @@ public class TelemachusData {
             public var liquid: Fuel            = Fuel()
             
             /// Information about a fuel
-            struct Fuel {
+            public struct Fuel {
                 /// Current fuel amount
                 public var current: Double     = 0.0
                 /// maximum fuel amount
