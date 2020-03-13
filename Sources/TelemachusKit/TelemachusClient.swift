@@ -27,24 +27,15 @@ public class TelemachusClient: ObservableObject {
     public init() {
         self.socket = SocketDelegate()
         self.socket.onConnect = {
-            DispatchQueue.main.async
-            {
-                self.isConnected = false
-                    
-            }
             self.isConnected = true
             self.onConnect?()
         }
         self.socket.onDisconnect = { (error: Error?) in
-            DispatchQueue.main.async {
-                self.isConnected = false
-            }
+            self.isConnected = false
             self.onDisconnect?(error)
         }
         self.socket.onTelemachusData = { (data: TelemachusData) in
-            DispatchQueue.main.async {
-                self.data = data
-            }
+            self.data = data
             self.onTelemachusData?(data)
         }
     }

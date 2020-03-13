@@ -20,7 +20,7 @@ class SocketDelegate: WebSocketDelegate, WebSocketPongDelegate {
     ///   - level: Log-Level
     ///   - message: String message
     private func log(_ level: Logger.Log.Level, _ message: String) {
-        Logger.log(level, "SuscriptionManager", message)
+        Logger.log(level, "SocketDelegate", message)
     }
     
     /// Gets called upon establishing a connection with a server
@@ -53,7 +53,9 @@ class SocketDelegate: WebSocketDelegate, WebSocketPongDelegate {
     
     /// Disconnect from Server
     func disconnect() {
-        websocket.disconnect()
+        if websocket.isConnected {
+            websocket.disconnect()
+        }
     }
     
     /// Sends the String to the Server
