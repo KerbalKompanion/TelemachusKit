@@ -40,12 +40,12 @@ public class TelemachusData {
         }
         
         switch json.light {
-            case .bool(let value): self.vessel.gear = value
+            case .bool(let value): self.vessel.light = value
             default: break
         }
         
         switch json.brake {
-            case .bool(let value): self.vessel.gear = value
+            case .bool(let value): self.vessel.brake = value
             default: break
         }
         

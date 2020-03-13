@@ -129,6 +129,7 @@ class SocketDelegate: WebSocketDelegate, WebSocketPongDelegate {
                 if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                     if let gameStatus = json["p.paused"] as? Int {
                         print(gameStatus)
+                        self.log(.info, "GAME STATUS: \(TelemachusData.GameStatus.init(rawValue: gameStatus) ?? .error)")
                     }
                 }
                 let json_model = try JSONDecoder().decode(JsonModel.self, from: data)
