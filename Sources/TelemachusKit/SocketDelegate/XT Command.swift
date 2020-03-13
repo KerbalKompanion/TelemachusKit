@@ -9,32 +9,32 @@ import Foundation
 
 extension TelemachusClient {
     public class Command {
-        public enum Key {
-            static let throttle      = "f.setThrottle"
-            static let throttleUp    = "f.throttleUp"
-            static let throttleDown  = "f.throttleDown"
-            static let throttleFull  = "f.throttleFull"
-            static let throttleZero  = "f.throttleZero"
+        public enum Key: String {
+            case throttle      = "f.setThrottle"
+            case throttleUp    = "f.throttleUp"
+            case throttleDown  = "f.throttleDown"
+            case throttleFull  = "f.throttleFull"
+            case throttleZero  = "f.throttleZero"
             
-            static let rcs           = "f.rcs"
-            static let sas           = "f.sas"
+            case rcs           = "f.rcs"
+            case sas           = "f.sas"
             
-            static let light         = "f.light"
-            static let gear          = "f.gear"
-            static let brake         = "f.brake"
+            case light         = "f.light"
+            case gear          = "f.gear"
+            case brake         = "f.brake"
             
-            static let abort         = "f.abort"
+            case abort         = "f.abort"
             
-            static let actionGroup01 = "f.ag1"
-            static let actionGroup02 = "f.ag2"
-            static let actionGroup03 = "f.ag3"
-            static let actionGroup04 = "f.ag4"
-            static let actionGroup05 = "f.ag5"
-            static let actionGroup06 = "f.ag6"
-            static let actionGroup07 = "f.ag7"
-            static let actionGroup08 = "f.ag8"
-            static let actionGroup09 = "f.ag9"
-            static let actionGroup10 = "f.ag10"
+            case actionGroup01 = "f.ag1"
+            case actionGroup02 = "f.ag2"
+            case actionGroup03 = "f.ag3"
+            case actionGroup04 = "f.ag4"
+            case actionGroup05 = "f.ag5"
+            case actionGroup06 = "f.ag6"
+            case actionGroup07 = "f.ag7"
+            case actionGroup08 = "f.ag8"
+            case actionGroup09 = "f.ag9"
+            case actionGroup10 = "f.ag10"
         }
         
         public enum Parameter {
