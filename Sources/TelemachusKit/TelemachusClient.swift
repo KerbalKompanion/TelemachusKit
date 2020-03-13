@@ -8,6 +8,7 @@
 import Foundation
 import Starscream
 
+/// The Client or communicating with the Telemachus Websocket
 public class TelemachusClient: ObservableObject {
     
     /// Gets called upon establishing a connection with a server
@@ -20,15 +21,23 @@ public class TelemachusClient: ObservableObject {
     /// The SocketDelegate
     private let socket: SocketDelegate
     
+    /// The last data the server sent
     @Published public var data: TelemachusData = TelemachusData()
+    
+    /// Indicates whether the client is connected to a Telemachus server
     @Published public var isConnected: Bool = false
+    
+    /// The Current URL of the Server
     @Published public var currentURL: URL? = nil
     
+    
+    /// Initializes the Client
     public init() {
         self.socket = SocketDelegate()
         self.socket.onConnect = {
             self.isConnected = true
             self.onConnect?()
+            self.currentURL = self.socket.currentUrl
         }
         self.socket.onDisconnect = { (error: Error?) in
             self.isConnected = false

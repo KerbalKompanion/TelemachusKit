@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Decodes received TelemachusData
 public struct JsonModel: Decodable {
     let gameStatus: Int //p.paused
     let universalTime: Double
@@ -54,6 +55,8 @@ public struct JsonModel: Decodable {
     }
     
 }
+
+/// Can be used for Decodable where vlue can be either Boolean or Integer (Dont thank me thank the devs of Telemachus, who made their otherwise perfectly fine Websocket return a f*cking QuantumValue :D PS: Still love you for the mod but come on!
 enum QuantumValue: Decodable {
     case bool(Bool), int(Int)
     init(from decoder: Decoder) throws {

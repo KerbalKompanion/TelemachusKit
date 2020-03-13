@@ -8,6 +8,8 @@
 import Foundation
 
 extension TelemachusClient {
+    
+    /// API-Strings for Telemachus Websocket API
     public enum ApiKey: String, CaseIterable {
         case gameStatus = "p.paused"
         case universalTime = "t.universalTime"
@@ -37,6 +39,5 @@ extension TelemachusClient {
         case targetDistance = "tar.distance"
         case targetVelocity = "tar.o.velocity"
         case targetRelativeVelocity = "tar.o.relativeVelocity"
-        
     }
 }

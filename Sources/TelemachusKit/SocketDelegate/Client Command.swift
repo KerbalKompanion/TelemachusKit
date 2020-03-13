@@ -8,7 +8,10 @@
 import Foundation
 
 extension TelemachusClient {
+    
+    /// Class for building commands
     public class Command {
+        /// Api Keys for commands
         public enum Key: String {
             case throttle      = "f.setThrottle"
             case throttleUp    = "f.throttleUp"
@@ -37,6 +40,8 @@ extension TelemachusClient {
             case actionGroup10 = "f.ag10"
         }
         
+        
+        /// A parameter that can be added to a command Key
         public enum Parameter {
             static let on   = "true"
             static let off  = "true"

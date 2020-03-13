@@ -7,6 +7,8 @@
 
 import Foundation
 
+
+/// Class for Holding FlightData from KSP
 public class TelemachusData {
     
     /// DateFormatter for dateStrings
@@ -87,11 +89,17 @@ public class TelemachusData {
     
     /// Enum representing the Game Status
     public enum GameStatus: Int {
+        /// game is running and vessel is in flight
         case inFlight   = 0
+        /// game is paused
         case paused     = 1
+        /// TelemachusAntenna doesnt have power
         case noPower    = 2
+        /// TelemachusAntenna is disabled
         case disabled   = 3
+        /// TelemachusAntenna not on board
         case notFound   = 4
+        /// Error (not send by Telemachus)
         case error      = 99
     }
     
@@ -143,8 +151,14 @@ public class TelemachusData {
         
         /// Attitude Struct
         public struct Attitude {
+            
+            /// Roll of the Vessel
             public var roll: Double            = 0.0
+            
+            /// heading of the Vessel
             public var heading: Double         = 0.0
+            
+            /// pitch of the Vessel
             public var pitch: Double           = 0.0
         }
         
@@ -158,6 +172,7 @@ public class TelemachusData {
         
         /// Ressource Struct
         public struct Ressource {
+            /// Liquid Fuel Ressource
             public var liquid: Fuel            = Fuel()
             
             /// Information about a fuel
