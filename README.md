@@ -23,7 +23,7 @@
 
 - [Author](#author)
 - [Contributing](#contributing)
-- [Recommended KSP and Telemachus Versions](#22)
+- [Recommended KSP and Telemachus Versions](#recommended-ksp-and-telemachus-versions)
 - [Installation Instructions](#installation)
 - [Getting Started](#getting-started)
 
