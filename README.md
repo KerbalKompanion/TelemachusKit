@@ -73,6 +73,7 @@ $ swift package generate-xcodeproj
 ```
 
 ## Getting Started
+Here's: A quick Guide on how to get started with TelemachusKit. You can also look at [Kerbal Kompanion](), my iOS App utilizing this Swift Package
 ### Initiate the Subscription Manager
 To connect to the Telemachus Server just call the `connect()`method with the ip and port of the websocket. You can also declare what should happen when the client connects to a server: with the `subManager.onConnect()`method
 ```swift
@@ -88,8 +89,19 @@ telemachus.connect("127.0.0.1", 8085) {
 To handle the incoming data:
 ```swift
 var data: TelemachusData!
-let subManager = SubscriptionManager()
-subManager.onTelemachusData = { (tData: TelemachusData) in
+let telemachus = TelemachusClient()
+// .onTelemachusData will be called whenever there is new data
+telemachus.onTelemachusData = { (tData: TelemachusData) in
   self.data = tData
 }
+telemachus.connect("127.0.0.1", 8085) {
+  telemachus.subscribeTo(TelemachusClient.ApiKey.allCases) // Subscribe to all values
+}
 ```
+
+Use TelemachusClient as Observable Object (EnvironmentObject, @State, @Binding):
+```swift
+// Data is stored in telemachus.data
+@EnvironmentObject var telemachus: TelemachusClient
+...
+
