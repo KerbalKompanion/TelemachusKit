@@ -22,6 +22,7 @@
 > TelemachusKit is a Swift Package to help developers build Companion-Apps and other applications for KSP's 'Telemachus' Mod. The Package provides a wrapper for the websocket of Telemachus
 
 - [Author](#author)
+- [Documentation](#documentation)
 - [Contributing](#contributing)
 - [Recommended KSP and Telemachus Versions](#recommended-ksp-and-telemachus-versions)
 - [Installation Instructions](#installation)
@@ -35,6 +36,9 @@
 * Twitter: [@noahkamara99](https://twitter.com/noahkamara99)
 * Github: [@noahkamara](https://github.com/noahkamara)
 
+## Documentation
+You'll find the Documentation [here](https://noahkamara.github.io/TelemachusKit/index.html
+)
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/noahkamara/TelemachusKit/issues). 
