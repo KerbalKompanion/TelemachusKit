@@ -33,9 +33,20 @@ public class TelemachusData {
         self.gameStatus                        = GameStatus(rawValue: json.gameStatus) ?? .error
         self.universalTimeInterval             = json.universalTime
         self.missionTimeInterval               = json.missionTime
-        self.vessel.name                       = "realName"
+        self.vessel.name                       = json.name
         self.vessel.altitude                   = json.altitude
         self.vessel.heightFromTerrain          = json.heightFromTerrain
+        self.vessel.throttle                   = json.throttle
+        switch json.sas {
+            case .bool(let value): self.vessel.sas = value
+            default: break
+        }
+        
+        switch json.rcs {
+            case .bool(let value): self.vessel.rcs = value
+            default: break
+        }
+        
         switch json.gear {
             case .bool(let value): self.vessel.gear = value
             default: break
@@ -60,6 +71,18 @@ public class TelemachusData {
         
         self.vessel.ressource.liquid.current   = json.liquidFuelCurrent
         self.vessel.ressource.liquid.max       = json.liquidFuelMax
+        
+        
+        if json.targetName != "" {
+            self.target = Target()
+            self.target!.name = json.targetName
+            self.target!.type = json.targetType
+            self.target!.distance = json.targetDistance
+            self.target!.velocity = json.targetVelocity
+            self.target!.relativeVelocity = json.targetRelativeVelocity
+        } else {
+            self.target = nil
+        }
     }
     
     /// Game Status of TelemachusAntenna
@@ -124,6 +147,16 @@ public class TelemachusData {
         /// Altitude relative to the terrain height
         public var heightFromTerrain: Double   = 0.0
         
+        /// Status of the SAS
+        /// true: SAS on
+        /// false: SAS off
+        public var sas: Bool                  = false
+        
+        /// Status of the RCS
+        /// true: RCS on
+        /// false: RCS off
+        public var rcs: Bool                  = false
+        
         /// Status of the gear
         /// true: Gear down
         /// false: Gear up
@@ -141,6 +174,10 @@ public class TelemachusData {
         
         /// The attitude (roll, pitch, heading)
         public var attitude: Attitude          = Attitude()
+        
+        
+        /// The engine throttle in percent
+        public var throttle: Double            = 0.0
         
         /// The Speed (vertical, surface)
         public var speed: Speed                = Speed()
@@ -193,14 +230,14 @@ public class TelemachusData {
     /// Target Struct
     public struct Target {
         /// Name of the target
-        public var name: String
+        public var name: String                = ""
         /// Type of the target
-        public var type: String
+        public var type: String                = ""
         /// Distance from the target
-        public var distance: Double
+        public var distance: Double            = 0.0
         /// Targets velocity
-        public var velocity: Double
+        public var velocity: Double            = 0.0
         /// Targets velocity relative to current vessel
-        public var relativeVelocity: Double
+        public var relativeVelocity: Double    = 0.0
     }
 }

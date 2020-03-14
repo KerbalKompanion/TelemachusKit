@@ -12,8 +12,12 @@ public struct JsonModel: Decodable {
     let gameStatus: Int //p.paused
     let universalTime: Double
     let missionTime: Double
+    let name: String
     let altitude: Double
     let heightFromTerrain: Double
+    let throttle: Double
+    let sas: QuantumValue
+    let rcs: QuantumValue
     let gear: QuantumValue
     let light: QuantumValue
     let brake: QuantumValue
@@ -35,8 +39,12 @@ public struct JsonModel: Decodable {
         case gameStatus = "p.paused"
         case universalTime = "t.universalTime"
         case missionTime =  "v.missionTime"
+        case name = "v.name"
         case altitude = "v.altitude"
         case heightFromTerrain = "v.heightFromTerrain"
+        case throttle = "f.throttle"
+        case sas = "f.sasValue"
+        case rcs = "f.rcsValue"
         case gear = "v.gearValue"
         case light = "v.lightValue"
         case brake = "v.brakeValue"

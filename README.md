@@ -1,7 +1,10 @@
 <h1 align="center">Welcome to TelemachusKit 👋</h1>
 <p>
-  <a href="https://github.com/noahkamara/TelemachusKit/releases/latest" target="_blank">
-    <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+  <a href="https://github.com/noahkamara/TelemachusKit/releases/latest">
+    <img alt="latest stable" src="https://img.shields.io/github/v/release/noahkamara/TelemachusKit">
+  </a>
+  <a href="https://github.com/noahkamara/TelemachusKit/releases/latest">
+    <img alt="latest (including prereleases)" src="https://img.shields.io/github/v/release/noahkamara/TelemachusKit?include_prereleases">
   </a>
   <a href="https://noahkamara.github.io/TelemachusKit/index.html" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
@@ -10,6 +13,8 @@
     <img alt="Twitter: noahkamara99" src="https://img.shields.io/twitter/follow/noahkamara99.svg?style=social" />
   </a>
 </p>
+
+
 
 > TelemachusKit is a Swift Package to help developers build Companion-Apps and other applications for KSP's 'Telemachus' Mod. The Package provides a wrapper for the websocket of Telemachus
 
