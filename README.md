@@ -1,10 +1,10 @@
 <h1 align="center">Welcome to TelemachusKit 👋</h1>
 <p>
   <a href="https://github.com/noahkamara/TelemachusKit/releases/latest">
-    <img alt="latest stable" src="https://img.shields.io/github/v/release/noahkamara/TelemachusKit?label=stable">
+    <img alt="latest stable" src="https://img.shields.io/github/v/release/noahkamara/TelemachusSwift?label=stable">
   </a>
   <a href="https://github.com/noahkamara/TelemachusKit/releases/latest">
-    <img alt="latest (including prereleases)" src="https://img.shields.io/github/v/release/noahkamara/TelemachusKit?include_prereleases+label=pre-release">
+    <img alt="latest version" src="https://img.shields.io/github/v/release/noahkamara/TelemachusSwift?include_prereleases&label=pre">
   </a>
   <a href="https://noahkamara.github.io/TelemachusKit/index.html" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
