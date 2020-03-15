@@ -220,7 +220,12 @@ public class TelemachusData {
                 public var max: Double         = 0.0
                 /// percentage of fuel left (relative to max)
                 public var remaining: Double {
-                   get { return (current / max) }
+                    get {
+                        if self.max == 0.0 {
+                            return 0.0
+                        }
+                        return (current / max)
+                    }
                 }
             }
         }

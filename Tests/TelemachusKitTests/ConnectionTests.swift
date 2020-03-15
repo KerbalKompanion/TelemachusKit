@@ -14,8 +14,12 @@ final class ConnectionTests: XCTestCase {
             }
         }
         
-        sm.connect(self.ip, self.port) { 
-            sm.subscribeTo(TelemachusClient.ApiKey.allCases)
+        sm.connect(self.ip, self.port) { result in
+            switch result {
+                case .success: sm.subscribeTo(TelemachusClient.ApiKey.allCases)
+                case .failure(let error): print(error)
+            }
+            
         }
         
         wait(for: [expect], timeout: 120.0)

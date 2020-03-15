@@ -63,7 +63,7 @@ public class TelemachusClient: ObservableObject {
     }
     
     /// Connect to url with Completion
-    public func connect(_ ip: String, _ port: Int, completion: () -> Void) {
+    public func connect(_ ip: String, _ port: Int, completion: Completion.Basic) {
         var url: URLComponents = URLComponents()
         url.scheme = "ws"
         url.host = "192.168.178.23"
@@ -73,8 +73,11 @@ public class TelemachusClient: ObservableObject {
             // TODO: Throw error here
         }
         print("HIS")
-        self.socket.connect(ip, port) {
-            completion()
+        self.socket.connect(ip, port) { result in
+            switch result {
+                case .success: completion(.success(true))
+                case .failure(let error): completion(.failure(error))
+            }
         }
     }
     

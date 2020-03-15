@@ -51,7 +51,7 @@ class SocketDelegate: WebSocketDelegate, WebSocketPongDelegate {
     }
     
     /// Connect to url with Completion
-    func connect(_ ip: String, _ port: Int, completion: () -> Void ) {
+    func connect(_ ip: String, _ port: Int, completion: Completion.Basic ) {
         self.url.scheme = "ws"
         self.url.host = "192.168.178.23"
         self.url.path = "/datalink"
@@ -64,11 +64,20 @@ class SocketDelegate: WebSocketDelegate, WebSocketPongDelegate {
         
         self.log(.info, "connecting to \(url.url!)")
         websocket.connect()
-        while true {
-            if websocket.isConnected {
-                completion()
-                break
+        var startDate = Date()
+        startDate.addTimeInterval(10)
+        do {
+            while true {
+                if Date() < startDate {
+                    throw TelemachusErrors.ConnectionError.refused
+                }
+                if websocket.isConnected {
+                    completion(.success(true))
+                    break
+                }
             }
+        } catch let error {
+            completion(.failure(error))
         }
     }
     
