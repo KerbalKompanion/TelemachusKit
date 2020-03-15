@@ -90,9 +90,9 @@ public class TelemachusClient: ObservableObject {
     public func sendCommand(_ command: Command.Key, _ param: Command.Parameter? = nil) {
         var message = ""
         if param == nil {
-            message = "{\"run\":[\(command.rawValue)]}"
+            message = "{\"run\":[\"\(command.rawValue)\"]}"
         } else {
-            message = "{\"run\":[\(command.rawValue)]}"
+            message = "{\"run\":[\"\(command.rawValue)\"]}"
         }
         self.socket.write(string: message)
         
