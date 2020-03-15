@@ -87,9 +87,15 @@ public class TelemachusClient: ObservableObject {
     
     /// Sends command to Telemachus Server
     /// - Parameter keys: Set of ApiKeys
-    public func sendCommand(_ command: Command.Key, _ param: Command.Parameter) {
-        let message: String = "{\"run\":[\(command)]}"
+    public func sendCommand(_ command: Command.Key, _ param: Command.Parameter? = nil) {
+        var message = ""
+        if param == nil {
+            message = "{\"run\":[\(command.rawValue)]}"
+        } else {
+            message = "{\"run\":[\(command.rawValue)]}"
+        }
         self.socket.write(string: message)
+        
     }
     
     /// Subscibes the Client to the given set of ApiKeys

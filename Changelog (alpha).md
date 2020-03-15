@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - TelemachusData: remaining Fuel is now 0 when max and current are 0
+- TelemachusData: sendCommand, made Param optional and replaced Key with string representation (Erro Fix)
 - API Keys: Changed Key of rcs and sas value 
 - TelemachusDelegate: added timeout, error to connect method
 - SocketDelegate: added timeout, error to connect method
