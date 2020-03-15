@@ -8,7 +8,7 @@
 import Foundation
 
 class Logger {
-    static let loglevel: Log.Level = .error
+    static let loglevel: Log.Level = .debug
     static func log(_ level: Log.Level, _ origin: String, _ message: String) {
         if level.rawValue >= self.loglevel.rawValue {
             let log = Log(origin: origin, level: level, message: message)

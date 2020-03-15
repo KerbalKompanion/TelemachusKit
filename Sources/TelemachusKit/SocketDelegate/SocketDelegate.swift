@@ -68,7 +68,7 @@ class SocketDelegate: WebSocketDelegate, WebSocketPongDelegate {
         startDate.addTimeInterval(10)
         do {
             while true {
-                if Date() < startDate {
+                if Date() > startDate {
                     throw TelemachusErrors.ConnectionError.refused
                 }
                 if websocket.isConnected {
@@ -132,12 +132,10 @@ class SocketDelegate: WebSocketDelegate, WebSocketPongDelegate {
             
         }
         
-        
         if let data = text.data(using: .utf8) {
             do {
                 if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                     if let gameStatus = json["p.paused"] as? Int {
-                        print(gameStatus)
                         self.log(.info, "GAME STATUS: \(TelemachusData.GameStatus.init(rawValue: gameStatus) ?? .error)")
                     }
                 }

@@ -72,7 +72,6 @@ public class TelemachusClient: ObservableObject {
         if url.url != nil {
             // TODO: Throw error here
         }
-        print("HIS")
         self.socket.connect(ip, port) { result in
             switch result {
                 case .success: completion(.success(true))
