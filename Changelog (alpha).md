@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [unreleased]
 ### Added
 ### Changed
+
+- TelemachusData: remaining Fuel is now 0 when max and current are 0
+- TelemachusDelegate: added timeout, error to connect method
+- SocketDelegate: added timeout, error to connect method
+
 ### Deprecated
 ### Removed
 
