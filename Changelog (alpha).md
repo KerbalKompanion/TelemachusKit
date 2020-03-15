@@ -7,8 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [unreleased]
 ### Added
 ### Changed
+### Deprecated
+### Removed
+
+## [v1.0.0-alpha.3] - 2020-03-15
+### Added
+### Changed
 
 - TelemachusData: remaining Fuel is now 0 when max and current are 0
+- API Keys: Changed Key of rcs and sas value 
 - TelemachusDelegate: added timeout, error to connect method
 - SocketDelegate: added timeout, error to connect method
 
