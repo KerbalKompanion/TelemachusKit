@@ -33,9 +33,9 @@ extension TelemachusClient {
         /// Throttle in percent
         case throttle = "f.throttle"
         /// SAS
-        case sasValue = "f.sas"
+        case sasValue = "v.sasValue"
         /// RCS
-        case rcsValue = "f.rcs"
+        case rcsValue = "v.rcsValue"
         /// Gear
         case gearValue = "v.gearValue"
         /// Brake
