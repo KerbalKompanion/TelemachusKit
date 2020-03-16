@@ -26,8 +26,20 @@ public struct JsonModel: Decodable {
     let pitch: Double
     let verticalSpeed: Double
     let velocity: Double
+    
+    let ressourceList: [String]
     let liquidFuelCurrent: Double
     let liquidFuelMax: Double
+    let electricChargeCurrent: Double
+    let electricChargeMax: Double
+    let intakeAirCurrent: Double
+    let intakeAirMax: Double
+    
+    let tempSensor: Double
+    let presSensor: Double
+    let accSensor: Double
+    let gravSensor: Double
+    
     let targetName: String
     let targetType: String
     let targetDistance: Double
@@ -53,8 +65,20 @@ public struct JsonModel: Decodable {
         case pitch = "n.pitch"
         case verticalSpeed = "v.verticalSpeed"
         case velocity = "v.surfaceVelocity"
+        
+        case ressourceList = "r.resourceNameList"
         case liquidFuelCurrent = "r.resource[LiquidFuel]"
         case liquidFuelMax = "r.resourceMax[LiquidFuel]"
+        case electricChargeCurrent = "r.resource[ElectricCharge]"
+        case electricChargeMax = "r.resourceMax[ElectricCharge]"
+        case intakeAirCurrent = "r.resource[IntakeAir]"
+        case intakeAirMax = "r.resourceMax[IntakeAir]"
+        
+        case tempSensor = "s.sensor.temp"
+        case presSensor = "s.sensor.pres"
+        case accSensor = "s.sensor.acc"
+        case gravSensor = "s.sensor.grav"
+        
         case targetName = "tar.name"
         case targetType = "tar.type"
         case targetDistance = "tar.distance"

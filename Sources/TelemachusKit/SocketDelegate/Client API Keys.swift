@@ -50,10 +50,37 @@ extension TelemachusClient {
         /// Pitch
         case pitch = "n.pitch"
         
+        /// Ressource List
+        case ressourceList = "r.resourceNameList"
+        
         /// Liquid Fuel - Current Amount
         case liquidFuelCurrent = "r.resource[LiquidFuel]"
         /// Liquid Fuel - Max Amount
         case liquidFuelMax = "r.resourceMax[LiquidFuel]"
+        
+        /// Electric Charge - Current Amount
+        case electricChargeCurrent = "r.resource[ElectricCharge]"
+        /// Electric Charge - Max Amount
+        case electricChargeMax = "r.resourceMax[ElectricCharge]"
+        
+        /// Intake Air - Current Amount
+        case intakeAirCurrent = "r.resource[IntakeAir]"
+        /// Intake Air - Max Amount
+        case intakeAirMax = "r.resourceMax[IntakeAir]"
+        
+        
+        /// Temperature Sensor Data
+        case tempSensor = "s.sensor.temp"
+        
+        /// Pressure Sensor Data
+        case presSensor = "s.sensor.pres"
+        
+        /// Acceleration Sensor Data
+        case accSensor = "s.sensor.acc"
+        
+        /// Gravitation Sensor Data
+        case gravSensor = "s.sensor.grav"
+        
         
         /// Target: Name
         case targetName = "tar.name"

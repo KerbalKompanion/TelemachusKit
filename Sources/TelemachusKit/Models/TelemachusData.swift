@@ -72,6 +72,12 @@ public class TelemachusData {
         self.vessel.ressource.liquid.current   = json.liquidFuelCurrent
         self.vessel.ressource.liquid.max       = json.liquidFuelMax
         
+        self.vessel.ressource.electricCharge.current   = json.electricChargeCurrent
+        self.vessel.ressource.electricCharge.max       = json.electricChargeMax
+        
+        self.vessel.ressource.intakeAir.current   = json.intakeAirCurrent
+        self.vessel.ressource.intakeAir.max       = json.intakeAirMax
+        
         
         if json.targetName != "" {
             self.target = Target()
@@ -106,6 +112,9 @@ public class TelemachusData {
     /// Information about the current Vessel
     public var vessel: Vessel                  = Vessel()
     
+    /// Information about environment sensors (Data)
+    public var sensors: SensorData             = SensorData()
+    
     /// Information about the Vessel's target
     public var target: Target?                 = nil
     
@@ -122,6 +131,8 @@ public class TelemachusData {
         case disabled   = 3
         /// TelemachusAntenna not on board
         case notFound   = 4
+        /// KSP not in Flight
+        case noVessel   = 5
         /// Error (not send by Telemachus)
         case error      = 99
     }
@@ -211,7 +222,8 @@ public class TelemachusData {
         public struct Ressource {
             /// Liquid Fuel Ressource
             public var liquid: Fuel            = Fuel()
-            
+            public var electricCharge: Fuel    = Fuel()
+            public var intakeAir: Fuel         = Fuel()
             /// Information about a fuel
             public struct Fuel {
                 /// Current fuel amount
@@ -231,7 +243,18 @@ public class TelemachusData {
         }
     }
     
-    
+    /// Sensor Data Struct
+    public struct SensorData {
+        /// Temperature Sensor Data
+        public var temperature: Double         = 0.0
+        /// Pressure Sensor Data
+        public var pressure: Double            = 0.0
+        /// Acceleration Sensor Data
+        public var acceleration: Double        = 0.0
+        /// Gravitation Sensor Data
+        public var gravitation: Double         = 0.0
+        
+    }
     /// Target Struct
     public struct Target {
         /// Name of the target
