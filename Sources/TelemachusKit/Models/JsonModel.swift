@@ -35,10 +35,10 @@ public struct JsonModel: Decodable {
     let intakeAirCurrent: Double
     let intakeAirMax: Double
     
-    let tempSensor: Double
-    let presSensor: Double
-    let accSensor: Double
-    let gravSensor: Double
+    let tempSensor: SensorValue
+    let presSensor: SensorValue
+    let accSensor: SensorValue
+    let gravSensor: SensorValue
     
     let targetName: String
     let targetType: String
@@ -86,6 +86,27 @@ public struct JsonModel: Decodable {
         case targetRelativeVelocity = "tar.o.relativeVelocity"
     }
     
+}
+
+
+/// Can be used for Decodable where vlue can be either Double or Sensor Error
+enum SensorValue: Decodable {
+    case double(Double), null(Double?)
+    init(from decoder: Decoder) throws {
+        if let double = try? decoder.singleValueContainer().decode(Double.self) {
+            self = .double(double)
+            return
+        } else {
+            self = .null(nil)
+            return
+        }
+
+        throw SensorError.missingValue
+    }
+
+    enum SensorError:Error {
+        case missingValue
+    }
 }
 
 /// Can be used for Decodable where vlue can be either Boolean or Integer (Dont thank me thank the devs of Telemachus, who made their otherwise perfectly fine Websocket return a f*cking QuantumValue :D PS: Still love you for the mod but come on!

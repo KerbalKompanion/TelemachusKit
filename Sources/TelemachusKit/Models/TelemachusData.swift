@@ -78,6 +78,23 @@ public class TelemachusData {
         self.vessel.ressource.intakeAir.current   = json.intakeAirCurrent
         self.vessel.ressource.intakeAir.max       = json.intakeAirMax
         
+        switch json.accSensor {
+            case .double(let value): self.sensors.acceleration = value
+            default: break
+        }
+        switch json.gravSensor {
+            case .double(let value): self.sensors.gravitation = value
+            default: break
+        }
+        switch json.presSensor {
+            case .double(let value): self.sensors.pressure = value
+            default: break
+        }
+        switch json.tempSensor {
+            case .double(let value): self.sensors.temperature = value
+            default: break
+        }
+        
         
         if json.targetName != "" {
             self.target = Target()
@@ -246,13 +263,43 @@ public class TelemachusData {
     /// Sensor Data Struct
     public struct SensorData {
         /// Temperature Sensor Data
-        public var temperature: Double         = 0.0
+        public var temperature: Double?        = nil
         /// Pressure Sensor Data
-        public var pressure: Double            = 0.0
+        public var pressure: Double?           = nil
         /// Acceleration Sensor Data
-        public var acceleration: Double        = 0.0
+        public var acceleration: Double?       = nil
         /// Gravitation Sensor Data
-        public var gravitation: Double         = 0.0
+        public var gravitation: Double?        = nil
+        
+        /// An Array of SensorTypes (the available sensors)
+        public var availableSensors: [SensorType] {
+            var available: [SensorType] = []
+            if self.temperature != nil {
+                available.append(.temperature)
+            }
+            if self.pressure != nil {
+                available.append(.pressure)
+            }
+            if self.acceleration != nil {
+                available.append(.acceleration)
+            }
+            if self.gravitation != nil {
+                available.append(.gravitation)
+            }
+            return available
+        }
+        
+        /// Sensor Type Enum
+        public enum SensorType {
+            /// Temperature Sensor
+            case temperature
+            /// Pressure Sensor
+            case pressure
+            /// Acceleration Sensor
+            case acceleration
+            /// Gravitation Sensor
+            case gravitation
+        }
         
     }
     /// Target Struct
