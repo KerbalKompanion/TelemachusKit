@@ -6,7 +6,7 @@ final class ConnectionTests: XCTestCase {
     let port: Int = 8085
     func testConnect() {
         let expect = expectation(description: "Connected Successfully")
-        let sm = TelemachusClient()
+        let sm = TelemachusClient(.debug)
         sm.onTelemachusData = { (data: TelemachusData) in
             print(data.gameStatus)
             if data.gameStatus != .error {

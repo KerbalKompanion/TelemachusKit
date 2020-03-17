@@ -8,6 +8,10 @@
 import Foundation
 import Starscream
 class SocketDelegate: WebSocketDelegate, WebSocketPongDelegate {
+    
+    /// LogLevel
+    private let logger: LogHelper
+    
     /// The reference to the Websocket
     private var websocket: WebSocket!
     
@@ -19,8 +23,13 @@ class SocketDelegate: WebSocketDelegate, WebSocketPongDelegate {
     /// - Parameters:
     ///   - level: Log-Level
     ///   - message: String message
-    private func log(_ level: Logger.Log.Level, _ message: String) {
-        Logger.log(level, "SocketDelegate", message)
+    private func log(_ level: LogHelper.Level, _ message: String) {
+        switch level {
+            case .debug: self.logger.debug(message)
+            case .info: self.logger.info(message)
+            case .error: self.logger.error(message)
+            case .warning: self.logger.warning(message)
+        }
     }
     
     /// Gets called upon establishing a connection with a server
@@ -33,6 +42,10 @@ class SocketDelegate: WebSocketDelegate, WebSocketPongDelegate {
     
     /// The current URL. will be nil if not connected
     public var currentUrl: URL? = nil
+    
+    init(_ loglevel: LogHelper.Level) {
+        self.logger     = LogHelper(label: "com.TelemachusKit.SocketDelegate", loglevel)
+    }
     
     /// Connect to url
     func connect(_ ip: String, _ port: Int) {

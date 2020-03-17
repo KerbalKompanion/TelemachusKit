@@ -16,11 +16,12 @@ let package = Package(
     ],
     dependencies: [
          .package(url: "https://github.com/daltoniam/Starscream", from: "3.0.0"),
+         .package(url: "https://github.com/apple/swift-log.git", from: "1.0.0"),
     ],
     targets: [
         .target(
             name: "TelemachusKit",
-            dependencies: ["Starscream"]),
+            dependencies: ["Starscream","Logging"]),
         .testTarget(
             name: "TelemachusKitTests",
             dependencies: ["TelemachusKit"]),

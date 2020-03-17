@@ -11,6 +11,10 @@ extension TelemachusClient {
     
     /// API-Strings for Telemachus Websocket API
     public enum ApiKey: String, CaseIterable {
+        /// Server IP
+        case ip = "a.ip"
+        /// Telemachus Version
+        case version = "a.version"
         /// Game Status
         case gameStatus = "p.paused"
         /// Universal Time
@@ -80,6 +84,19 @@ extension TelemachusClient {
         
         /// Gravitation Sensor Data
         case gravSensor = "s.sensor.grav"
+        
+        
+        /// Terrain Height
+        case terrainHeight = "v.terrainHeight"
+        /// Atmospheric Density
+        case atmosphericDensity = "v.atmosphericDensity"
+        /// GeeForce
+        case gforce = "v.geeForce"
+        /// Longitude
+        case longitude = "v.long"
+        /// Latitude
+        case latitude = "v.lat"
+        
         
         
         /// Target: Name

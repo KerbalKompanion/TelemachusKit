@@ -6,36 +6,41 @@
 //
 
 import Foundation
+import Logging
 
-class Logger {
-    static let loglevel: Log.Level = .debug
-    static func log(_ level: Log.Level, _ origin: String, _ message: String) {
-        if level.rawValue >= self.loglevel.rawValue {
-            let log = Log(origin: origin, level: level, message: message)
-            let message = "\(log.levelIcon()) : \(log.origin) :\t \(log.message)"
-            print(message)
+public class LogHelper {
+    let logLevel: Level
+    let logger: Logger
+    public func debug(_ message: String) {
+        if self.logLevel.rawValue <= Level.debug.rawValue {
+            logger.debug("\(message)")
+        }
+    }
+    public func info(_ message: String) {
+        if self.logLevel.rawValue <= Level.info.rawValue {
+            logger.info("\(message)")
+        }
+    }
+    public func error(_ message: String) {
+        if self.logLevel.rawValue <= Level.error.rawValue {
+            logger.error("\(message)")
+        }
+    }
+    public func warning(_ message: String) {
+        if self.logLevel.rawValue <= Level.warning.rawValue {
+            logger.warning("\(message)")
         }
     }
     
-    struct Log {
-        let origin: String
-        let level: Level
-        let message: String
-        enum Level: Int {
-            case debug = 0
-            case info = 1
-            case error = 2
-            case warning = 3
-        }
-        func levelIcon() -> String {
-            switch level {
-                case .debug : return "🐞"
-                case .info : return "ℹ️"
-                case .error : return "🚨"
-                case .warning : return "⚠️"
-            }
-        }
+    init(label: String, _ logLevel: Level = .debug) {
+        self.logger = Logger(label: label)
+        self.logLevel = logLevel
     }
     
-    //DEBUG,INFO,ERROR,EXCEPTION,WARNING
+    public enum Level: Int {
+        case debug = 0
+        case info = 1
+        case error = 2
+        case warning = 3
+    }
 }

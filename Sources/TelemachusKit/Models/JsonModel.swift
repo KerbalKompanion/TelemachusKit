@@ -9,6 +9,8 @@ import Foundation
 
 /// Decodes received TelemachusData
 public struct JsonModel: Decodable {
+    let version: String
+    let ip: [String]
     let gameStatus: Int //p.paused
     let universalTime: Double
     let missionTime: Double
@@ -26,6 +28,14 @@ public struct JsonModel: Decodable {
     let pitch: Double
     let verticalSpeed: Double
     let velocity: Double
+    
+    let terrainHeight: Double
+    
+    let atmosphericDensity: Double
+    let gforce: Double
+    
+    let longitude: Double
+    let latitude: Double
     
     let ressourceList: [String]
     let liquidFuelCurrent: Double
@@ -48,6 +58,8 @@ public struct JsonModel: Decodable {
     
     
     enum CodingKeys: String, CodingKey {
+        case version = "a.version"
+        case ip = "a.ip"
         case gameStatus = "p.paused"
         case universalTime = "t.universalTime"
         case missionTime =  "v.missionTime"
@@ -65,6 +77,14 @@ public struct JsonModel: Decodable {
         case pitch = "n.pitch"
         case verticalSpeed = "v.verticalSpeed"
         case velocity = "v.surfaceVelocity"
+        
+        case terrainHeight = "v.terrainHeight"
+        
+        case atmosphericDensity = "v.atmosphericDensity"
+        case gforce = "v.geeForce"
+        
+        case longitude = "v.long"
+        case latitude = "v.lat"
         
         case ressourceList = "r.resourceNameList"
         case liquidFuelCurrent = "r.resource[LiquidFuel]"

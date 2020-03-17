@@ -30,11 +30,20 @@ public class TelemachusData {
     
     /// Initializes an TelemachusData Model with a JsonModel
     public init(_ json: JsonModel) {
+        self.version                           = json.version
+        self.ip                                = json.ip[0]
         self.gameStatus                        = GameStatus(rawValue: json.gameStatus) ?? .error
         self.universalTimeInterval             = json.universalTime
         self.missionTimeInterval               = json.missionTime
+        
+        self.environment.atmosphericDensity    = json.atmosphericDensity
+        self.environment.geeforce              = json.gforce
+        self.environment.terrainHeight         = json.terrainHeight
+        
         self.vessel.name                       = json.name
         self.vessel.altitude                   = json.altitude
+        self.vessel.coordinates.latitude       = json.latitude
+        self.vessel.coordinates.longitude      = json.longitude
         self.vessel.heightFromTerrain          = json.heightFromTerrain
         self.vessel.throttle                   = json.throttle
         switch json.sas {
@@ -108,6 +117,10 @@ public class TelemachusData {
         }
     }
     
+    /// IP of the Server
+    public var ip: String                                  = ""
+    /// Telemachus Version
+    public var version: String                             = ""
     /// Game Status of TelemachusAntenna
     public var gameStatus: GameStatus                      = .error
     
@@ -128,6 +141,9 @@ public class TelemachusData {
     
     /// Information about the current Vessel
     public var vessel: Vessel                  = Vessel()
+    
+    /// Information about the Vessels environment
+    public var environment: Environment        = Environment()
     
     /// Information about environment sensors (Data)
     public var sensors: SensorData             = SensorData()
@@ -172,6 +188,9 @@ public class TelemachusData {
         /// The altitude relative to sea level
         public var altitude: Double            = 0.0
         
+        /// The Coordinates
+        public var coordinates: Coordinate     = Coordinate()
+        
         /// Altitude relative to the terrain height
         public var heightFromTerrain: Double   = 0.0
         
@@ -214,6 +233,11 @@ public class TelemachusData {
         public var ressource: Ressource        = Ressource()
         
         
+        //Coordinate Struct
+        public struct Coordinate {
+            public var latitude: Double        = 0.0
+            public var longitude: Double       = 0.0
+        }
         /// Attitude Struct
         public struct Attitude {
             
@@ -260,6 +284,17 @@ public class TelemachusData {
         }
     }
     
+    
+    /// Environment Data Struct
+    public struct Environment {
+        /// Atmospheric Density
+        public var atmosphericDensity: Double   = 0.0
+        /// GeeForce
+        public var geeforce: Double             = 0.0
+        /// Terrain Height
+        public var terrainHeight: Double        = 0.0
+    }
+    
     /// Sensor Data Struct
     public struct SensorData {
         /// Temperature Sensor Data
@@ -272,6 +307,7 @@ public class TelemachusData {
         public var gravitation: Double?        = nil
         
         /// An Array of SensorTypes (the available sensors)
+        @available(swift, deprecated: 1.0.0, obsoleted: 1.1.0, message: "THe sensors seem not to work")
         public var availableSensors: [SensorType] {
             var available: [SensorType] = []
             if self.temperature != nil {
