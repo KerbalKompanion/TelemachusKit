@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html"> Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/noahkamara/TelemachusKit"><img src="img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html"> Reference</a>
+        <img id="carat" src="img/carat.png" />
+          Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/TelemachusClient.html">TelemachusClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/TelemachusClient/ApiKey.html">– ApiKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/TelemachusClient/Command.html">– Command</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/TelemachusData.html">TelemachusData</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/TelemachusData/GameStatus.html">– GameStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/TelemachusData/Vessel.html">– Vessel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/TelemachusData/Target.html">– Target</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs.html#/s:13TelemachusKit9JsonModelV">JsonModel</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <h1 align="center">Welcome to TelemachusKit 👋</h1>
+
+<p>
+  <a href="https://github.com/noahkamara/TelemachusKit/releases/latest">
+    <img alt="latest stable" src="https://img.shields.io/github/v/release/noahkamara/TelemachusKit">
+  </a>
+  <a href="https://github.com/noahkamara/TelemachusKit/releases/latest">
+    <img alt="latest (including prereleases)" src="https://img.shields.io/github/v/release/noahkamara/TelemachusKit?include_prereleases">
+  </a>
+  <a href="https://noahkamara.github.io/TelemachusKit/index.html" target="_blank">
+    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
+  </a>
+  <a href="https://twitter.com/noahkamara99" target="_blank">
+    <img alt="Twitter: noahkamara99" src="https://img.shields.io/twitter/follow/noahkamara99.svg?style=social" />
+  </a>
+</p>
+
+<blockquote>
+<p>TelemachusKit is a Swift Package to help developers build Companion-Apps and other applications for KSP&rsquo;s &lsquo;Telemachus&rsquo; Mod. The Package provides a wrapper for the websocket of Telemachus</p>
+</blockquote>
+
+<ul>
+<li><a href="#installation">Installation Instructions</a></li>
+<li><a href="#getting-started">Getting Started</a></li>
+</ul>
+<h2 id='author' class='heading'>Author</h2>
+
+<p>👤 <strong>Noah Kamara</strong></p>
+
+<ul>
+<li>Website: noahkamara.com</li>
+<li>Twitter: <a href="https://twitter.com/noahkamara99">@noahkamara99</a></li>
+<li>Github: <a href="https://github.com/noahkamara">@noahkamara</a></li>
+</ul>
+<h2 id='contributing' class='heading'>🤝 Contributing</h2>
+
+<p>Contributions, issues and feature requests are welcome!<br />Feel free to check <a href="https://github.com/noahkamara/TelemachusKit/issues">issues page</a>. </p>
+<h2 id='show-your-support' class='heading'>Show your support</h2>
+
+<p>Give a ⭐️ if this project helped you!</p>
+<h2 id='installation' class='heading'>Installation</h2>
+
+<ul>
+<li><a href="#package-dependency">Package Dependency</a></li>
+<li><a href="#swift-package-manager">Swift Package Manager</a></li>
+</ul>
+<h3 id='add-as-package-dependency' class='heading'>Add as Package Dependency</h3>
+
+<p>See Apples <a href="https://developer.apple.com/documentation/xcode/adding_package_dependencies_to_your_app">Documentation</a></p>
+<h3 id='swift-package-manager' class='heading'>Swift Package Manager</h3>
+
+<p>&ldquo;The <a href="https://swift.org/package-manager/">Swift Package Manager</a> is a tool for managing the distribution of Swift code. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies.&rdquo;</p>
+
+<p>To integrate <code>FeedKit</code> into your project, specify it in your <code>Package.swift</code> file:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">package</span> <span class="o">=</span> <span class="kt">Package</span><span class="p">(</span>
+    <span class="nv">name</span><span class="p">:</span> <span class="s">"MyApp"</span><span class="p">,</span>
+    <span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span>
+        <span class="o">.</span><span class="kt">Package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/noahkamara/TelemachusKit.git"</span><span class="p">,</span> <span class="nv">majorVersion</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+</code></pre>
+
+<p>Then run:</p>
+<pre class="highlight shell"><code><span class="nv">$ </span>swift build
+</code></pre>
+
+<p>Or, alternatively:</p>
+<pre class="highlight shell"><code><span class="nv">$ </span>swift package generate-xcodeproj
+</code></pre>
+<h2 id='getting-started' class='heading'>Getting Started</h2>
+<h3 id='initiate-the-subscription-manager' class='heading'>Initiate the Subscription Manager</h3>
+
+<p>To connect to the Telemachus Server just call the <code>connect()</code>method with the ip and port of the websocket. You can also declare what should happen when the client connects to a server: with the <code>subManager.onConnect()</code>method</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">telemachus</span> <span class="o">=</span> <span class="kt">TelemachusClient</span><span class="p">()</span>
+<span class="n">telemachus</span><span class="o">.</span><span class="n">onConnect</span> <span class="o">=</span> <span class="p">{</span> 
+  <span class="nf">print</span><span class="p">(</span><span class="s">"connected to </span><span class="se">\(</span><span class="n">telemachus</span><span class="o">.</span><span class="n">currentUrl</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="n">telemachus</span><span class="o">.</span><span class="nf">connect</span><span class="p">(</span><span class="s">"127.0.0.1"</span><span class="p">,</span> <span class="mi">8085</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">telemachus</span><span class="o">.</span><span class="nf">subscribeTo</span><span class="p">(</span><span class="kt">TelemachusClient</span><span class="o">.</span><span class="kt">ApiKey</span><span class="o">.</span><span class="n">allCases</span><span class="p">)</span> <span class="c1">// Subscribe to all values</span>
+<span class="p">}</span>
+</code></pre>
+<h3 id='handle-incoming-telemachus-data' class='heading'>Handle incoming Telemachus Data</h3>
+
+<p>To handle the incoming data:</p>
+<pre class="highlight swift"><code><span class="k">var</span> <span class="nv">data</span><span class="p">:</span> <span class="kt">TelemachusData</span><span class="o">!</span>
+<span class="k">let</span> <span class="nv">subManager</span> <span class="o">=</span> <span class="kt">SubscriptionManager</span><span class="p">()</span>
+<span class="n">subManager</span><span class="o">.</span><span class="n">onTelemachusData</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">tData</span><span class="p">:</span> <span class="kt">TelemachusData</span><span class="p">)</span> <span class="k">in</span>
+  <span class="k">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">tData</span>
+<span class="p">}</span>
+</code></pre>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2020 <a class="link" href="https://noahkamara.com" target="_blank" rel="external">Noah</a>. All rights reserved. (Last updated: 2020-03-14)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
