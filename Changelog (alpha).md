@@ -8,7 +8,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [unreleased]
 ### Added
 ### Changed
+### Deprecated
+### Removed
 
+## [v1.0.0-beta.1] - 2020-03-17
+### Added
+- TelemachusClient: Added ability to choose LogLevel upon initialization
+- TelemachusData:   added Environment-Data
+- TelemachusData:   added IP 
+- TelemachusData:   added TelemachusVersion
+### Changed
+- Logger: renamed to LogHelper
+- LogHelper: implemented Logging library
 ### Deprecated
 ### Removed
 

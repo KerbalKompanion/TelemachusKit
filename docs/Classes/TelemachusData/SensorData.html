@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Command Class Reference</title>
+    <title>SensorData Structure Reference</title>
     <link rel="stylesheet" type="text/css" href="../../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/Command" class="dashAnchor"></a>
-    <a title="Command Class Reference"></a>
+    <a name="//apple_ref/swift/Struct/SensorData" class="dashAnchor"></a>
+    <a title="SensorData Structure Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../../index.html"> Docs</a> (87% documented)</p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../../index.html"> Reference</a>
         <img id="carat" src="../../img/carat.png" />
-        Command Class Reference
+        SensorData Structure Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -88,14 +88,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Command</h1>
+            <h1>SensorData</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Command</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SensorData</span></code></pre>
 
                 </div>
               </div>
-            <p>Class for building commands</p>
+            <p>Sensor Data Struct</p>
 
           </section>
           <section class="section task-group-section">
@@ -104,9 +104,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:13TelemachusKit0A6ClientC7CommandC3KeyO"></a>
-                    <a name="//apple_ref/swift/Enum/Key" class="dashAnchor"></a>
-                    <a class="token" href="#/s:13TelemachusKit0A6ClientC7CommandC3KeyO">Key</a>
+                    <a name="/s:13TelemachusKit0A4DataC06SensorC0V11temperatureSdSgvp"></a>
+                    <a name="//apple_ref/swift/Property/temperature" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13TelemachusKit0A4DataC06SensorC0V11temperatureSdSgvp">temperature</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -114,15 +114,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Api Keys for commands</p>
+                        <p>Temperature Sensor Data</p>
 
-                        <a href="../../Classes/TelemachusClient/Command/Key.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Key</span> <span class="p">:</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">temperature</span><span class="p">:</span> <span class="kt">Double</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -132,9 +131,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:13TelemachusKit0A6ClientC7CommandC9ParameterO"></a>
-                    <a name="//apple_ref/swift/Enum/Parameter" class="dashAnchor"></a>
-                    <a class="token" href="#/s:13TelemachusKit0A6ClientC7CommandC9ParameterO">Parameter</a>
+                    <a name="/s:13TelemachusKit0A4DataC06SensorC0V8pressureSdSgvp"></a>
+                    <a name="//apple_ref/swift/Property/pressure" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13TelemachusKit0A4DataC06SensorC0V8pressureSdSgvp">pressure</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -142,15 +141,96 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A parameter that can be added to a command Key</p>
+                        <p>Pressure Sensor Data</p>
 
-                        <a href="../../Classes/TelemachusClient/Command/Parameter.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Parameter</span> <span class="p">:</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">pressure</span><span class="p">:</span> <span class="kt">Double</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13TelemachusKit0A4DataC06SensorC0V12accelerationSdSgvp"></a>
+                    <a name="//apple_ref/swift/Property/acceleration" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13TelemachusKit0A4DataC06SensorC0V12accelerationSdSgvp">acceleration</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Acceleration Sensor Data</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">acceleration</span><span class="p">:</span> <span class="kt">Double</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13TelemachusKit0A4DataC06SensorC0V11gravitationSdSgvp"></a>
+                    <a name="//apple_ref/swift/Property/gravitation" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13TelemachusKit0A4DataC06SensorC0V11gravitationSdSgvp">gravitation</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gravitation Sensor Data</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">gravitation</span><span class="p">:</span> <span class="kt">Double</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13TelemachusKit0A4DataC06SensorC0V0D4TypeO"></a>
+                    <a name="//apple_ref/swift/Enum/SensorType" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13TelemachusKit0A4DataC06SensorC0V0D4TypeO">SensorType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sensor Type Enum</p>
+
+                        <a href="../../Classes/TelemachusData/SensorData/SensorType.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">SensorType</span></code></pre>
 
                         </div>
                       </div>

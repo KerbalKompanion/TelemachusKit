@@ -13,7 +13,7 @@
     <a title="  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html"> Docs</a> (100% documented)</p>
+        <p><a href="index.html"> Docs</a> (87% documented)</p>
         <p class="header-right"><a href="https://github.com/noahkamara/TelemachusKit"><img src="img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -30,6 +30,15 @@
           <li class="nav-group-name">
             <a href="Classes.html">Classes</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/Completion.html">Completion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/LogHelper.html">LogHelper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/LogHelper/Level.html">– Level</a>
+              </li>
               <li class="nav-group-task">
                 <a href="Classes/TelemachusClient.html">TelemachusClient</a>
               </li>
@@ -49,7 +58,19 @@
                 <a href="Classes/TelemachusData/Vessel.html">– Vessel</a>
               </li>
               <li class="nav-group-task">
+                <a href="Classes/TelemachusData/Environment.html">– Environment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/TelemachusData/SensorData.html">– SensorData</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Classes/TelemachusData/Target.html">– Target</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/TelemachusErrors.html">TelemachusErrors</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/TelemachusErrors/ConnectionError.html">– ConnectionError</a>
               </li>
             </ul>
           </li>
@@ -71,16 +92,19 @@
 
 <p>
   <a href="https://github.com/noahkamara/TelemachusKit/releases/latest">
-    <img alt="latest stable" src="https://img.shields.io/github/v/release/noahkamara/TelemachusKit">
+    <img alt="latest stable" src="https://img.shields.io/github/v/release/noahkamara/TelemachusSwift?label=stable">
   </a>
   <a href="https://github.com/noahkamara/TelemachusKit/releases/latest">
-    <img alt="latest (including prereleases)" src="https://img.shields.io/github/v/release/noahkamara/TelemachusKit?include_prereleases">
+    <img alt="latest version" src="https://img.shields.io/github/v/release/noahkamara/TelemachusSwift?include_prereleases&label=pre">
   </a>
   <a href="https://noahkamara.github.io/TelemachusKit/index.html" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
-  <a href="https://twitter.com/noahkamara99" target="_blank">
-    <img alt="Twitter: noahkamara99" src="https://img.shields.io/twitter/follow/noahkamara99.svg?style=social" />
+  <a href="https://github.com/noahkamara/TelemachusKit/blob/master/LICENSE">
+    <img src="https://img.shields.io/github/license/noahkamara/TelemachusKit" />
+  </a>
+  <a href="https://github.com/TeleIO/Telemachus-1/releases">
+    <img src="https://img.shields.io/badge/Telemachus-1.7-lightgrey" />
   </a>
 </p>
 
@@ -89,6 +113,10 @@
 </blockquote>
 
 <ul>
+<li><a href="#author">Author</a></li>
+<li><a href="#documentation">Documentation</a></li>
+<li><a href="#contributing">Contributing</a></li>
+<li><a href="#recommended-ksp-and-telemachus-versions">Recommended KSP and Telemachus Versions</a></li>
 <li><a href="#installation">Installation Instructions</a></li>
 <li><a href="#getting-started">Getting Started</a></li>
 </ul>
@@ -101,12 +129,20 @@
 <li>Twitter: <a href="https://twitter.com/noahkamara99">@noahkamara99</a></li>
 <li>Github: <a href="https://github.com/noahkamara">@noahkamara</a></li>
 </ul>
+<h2 id='documentation' class='heading'>Documentation</h2>
+
+<p>You&rsquo;ll find the Documentation <a href="https://noahkamara.github.io/TelemachusKit/index.html">here</a></p>
 <h2 id='contributing' class='heading'>🤝 Contributing</h2>
 
 <p>Contributions, issues and feature requests are welcome!<br />Feel free to check <a href="https://github.com/noahkamara/TelemachusKit/issues">issues page</a>. </p>
-<h2 id='show-your-support' class='heading'>Show your support</h2>
+<h2 id='recommended-ksp-and-telemachus-versions' class='heading'>Recommended KSP and Telemachus Versions</h2>
 
-<p>Give a ⭐️ if this project helped you!</p>
+<p>Every Version of KSP that supports a Telemachus-Mod from the following list should be fine:</p>
+
+<ul>
+<li><a href="https://github.com/TeleIO/Telemachus-1">Telemachus by TeleIO</a>
+If you&rsquo;ve tried with other Versions, please create an Issue with tag (enhancement) containing the url to the mod and the KSP versions tested</li>
+</ul>
 <h2 id='installation' class='heading'>Installation</h2>
 
 <ul>
@@ -137,6 +173,8 @@
 <pre class="highlight shell"><code><span class="nv">$ </span>swift package generate-xcodeproj
 </code></pre>
 <h2 id='getting-started' class='heading'>Getting Started</h2>
+
+<p>Here&rsquo;s: A quick Guide on how to get started with TelemachusKit. You can also look at <a href="">Kerbal Kompanion</a>, my iOS App utilizing this Swift Package</p>
 <h3 id='initiate-the-subscription-manager' class='heading'>Initiate the Subscription Manager</h3>
 
 <p>To connect to the Telemachus Server just call the <code>connect()</code>method with the ip and port of the websocket. You can also declare what should happen when the client connects to a server: with the <code>subManager.onConnect()</code>method</p>
@@ -152,16 +190,27 @@
 
 <p>To handle the incoming data:</p>
 <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">data</span><span class="p">:</span> <span class="kt">TelemachusData</span><span class="o">!</span>
-<span class="k">let</span> <span class="nv">subManager</span> <span class="o">=</span> <span class="kt">SubscriptionManager</span><span class="p">()</span>
-<span class="n">subManager</span><span class="o">.</span><span class="n">onTelemachusData</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">tData</span><span class="p">:</span> <span class="kt">TelemachusData</span><span class="p">)</span> <span class="k">in</span>
+<span class="k">let</span> <span class="nv">telemachus</span> <span class="o">=</span> <span class="kt">TelemachusClient</span><span class="p">()</span>
+<span class="c1">// .onTelemachusData will be called whenever there is new data</span>
+<span class="n">telemachus</span><span class="o">.</span><span class="n">onTelemachusData</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">tData</span><span class="p">:</span> <span class="kt">TelemachusData</span><span class="p">)</span> <span class="k">in</span>
   <span class="k">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">tData</span>
 <span class="p">}</span>
+<span class="n">telemachus</span><span class="o">.</span><span class="nf">connect</span><span class="p">(</span><span class="s">"127.0.0.1"</span><span class="p">,</span> <span class="mi">8085</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">telemachus</span><span class="o">.</span><span class="nf">subscribeTo</span><span class="p">(</span><span class="kt">TelemachusClient</span><span class="o">.</span><span class="kt">ApiKey</span><span class="o">.</span><span class="n">allCases</span><span class="p">)</span> <span class="c1">// Subscribe to all values</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>Use TelemachusClient as Observable Object (EnvironmentObject, @State, @Binding):</p>
+<pre class="highlight swift"><code><span class="c1">// Data is stored in telemachus.data</span>
+<span class="kd">@EnvironmentObject</span> <span class="k">var</span> <span class="nv">telemachus</span><span class="p">:</span> <span class="kt">TelemachusClient</span>
+<span class="o">...</span>
+
 </code></pre>
 
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://noahkamara.com" target="_blank" rel="external">Noah</a>. All rights reserved. (Last updated: 2020-03-14)</p>
+          <p>&copy; 2020 <a class="link" href="https://noahkamara.com" target="_blank" rel="external">Noah</a>. All rights reserved. (Last updated: 2020-03-17)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

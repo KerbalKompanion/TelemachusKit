@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>GameStatus Enumeration Reference</title>
+    <title>Level Enumeration Reference</title>
     <link rel="stylesheet" type="text/css" href="../../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,11 +10,11 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Enum/GameStatus" class="dashAnchor"></a>
-    <a title="GameStatus Enumeration Reference"></a>
+    <a name="//apple_ref/swift/Enum/Level" class="dashAnchor"></a>
+    <a title="Level Enumeration Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../../index.html"> Docs</a> (100% documented)</p>
+        <p><a href="../../index.html"> Docs</a> (87% documented)</p>
         <p class="header-right"><a href="https://github.com/noahkamara/TelemachusKit"><img src="../../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../../index.html"> Reference</a>
         <img id="carat" src="../../img/carat.png" />
-        GameStatus Enumeration Reference
+        Level Enumeration Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -31,6 +31,15 @@
           <li class="nav-group-name">
             <a href="../../Classes.html">Classes</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Classes/Completion.html">Completion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/LogHelper.html">LogHelper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/LogHelper/Level.html">– Level</a>
+              </li>
               <li class="nav-group-task">
                 <a href="../../Classes/TelemachusClient.html">TelemachusClient</a>
               </li>
@@ -50,7 +59,19 @@
                 <a href="../../Classes/TelemachusData/Vessel.html">– Vessel</a>
               </li>
               <li class="nav-group-task">
+                <a href="../../Classes/TelemachusData/Environment.html">– Environment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/TelemachusData/SensorData.html">– SensorData</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../../Classes/TelemachusData/Target.html">– Target</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/TelemachusErrors.html">TelemachusErrors</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/TelemachusErrors/ConnectionError.html">– ConnectionError</a>
               </li>
             </ul>
           </li>
@@ -67,14 +88,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>GameStatus</h1>
+            <h1>Level</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">GameStatus</span> <span class="p">:</span> <span class="kt">Int</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Level</span> <span class="p">:</span> <span class="kt">Int</span></code></pre>
 
                 </div>
               </div>
-            <p>Enum representing the Game Status</p>
+            <p>Undocumented</p>
 
           </section>
           <section class="section task-group-section">
@@ -83,9 +104,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:13TelemachusKit0A4DataC10GameStatusO8inFlightyA2EmF"></a>
-                    <a name="//apple_ref/swift/Element/inFlight" class="dashAnchor"></a>
-                    <a class="token" href="#/s:13TelemachusKit0A4DataC10GameStatusO8inFlightyA2EmF">inFlight</a>
+                    <a name="/s:13TelemachusKit9LogHelperC5LevelO5debugyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/debug" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13TelemachusKit9LogHelperC5LevelO5debugyA2EmF">debug</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -93,14 +114,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>game is running and vessel is in flight</p>
+                        <p>Undocumented</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">inFlight</span> <span class="o">=</span> <span class="mi">0</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">debug</span> <span class="o">=</span> <span class="mi">0</span></code></pre>
 
                         </div>
                       </div>
@@ -110,9 +131,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:13TelemachusKit0A4DataC10GameStatusO6pausedyA2EmF"></a>
-                    <a name="//apple_ref/swift/Element/paused" class="dashAnchor"></a>
-                    <a class="token" href="#/s:13TelemachusKit0A4DataC10GameStatusO6pausedyA2EmF">paused</a>
+                    <a name="/s:13TelemachusKit9LogHelperC5LevelO4infoyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/info" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13TelemachusKit9LogHelperC5LevelO4infoyA2EmF">info</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -120,14 +141,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>game is paused</p>
+                        <p>Undocumented</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">paused</span> <span class="o">=</span> <span class="mi">1</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">info</span> <span class="o">=</span> <span class="mi">1</span></code></pre>
 
                         </div>
                       </div>
@@ -137,90 +158,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:13TelemachusKit0A4DataC10GameStatusO7noPoweryA2EmF"></a>
-                    <a name="//apple_ref/swift/Element/noPower" class="dashAnchor"></a>
-                    <a class="token" href="#/s:13TelemachusKit0A4DataC10GameStatusO7noPoweryA2EmF">noPower</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>TelemachusAntenna doesnt have power</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">noPower</span> <span class="o">=</span> <span class="mi">2</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:13TelemachusKit0A4DataC10GameStatusO8disabledyA2EmF"></a>
-                    <a name="//apple_ref/swift/Element/disabled" class="dashAnchor"></a>
-                    <a class="token" href="#/s:13TelemachusKit0A4DataC10GameStatusO8disabledyA2EmF">disabled</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>TelemachusAntenna is disabled</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">disabled</span> <span class="o">=</span> <span class="mi">3</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:13TelemachusKit0A4DataC10GameStatusO8notFoundyA2EmF"></a>
-                    <a name="//apple_ref/swift/Element/notFound" class="dashAnchor"></a>
-                    <a class="token" href="#/s:13TelemachusKit0A4DataC10GameStatusO8notFoundyA2EmF">notFound</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>TelemachusAntenna not on board</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">notFound</span> <span class="o">=</span> <span class="mi">4</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:13TelemachusKit0A4DataC10GameStatusO5erroryA2EmF"></a>
+                    <a name="/s:13TelemachusKit9LogHelperC5LevelO5erroryA2EmF"></a>
                     <a name="//apple_ref/swift/Element/error" class="dashAnchor"></a>
-                    <a class="token" href="#/s:13TelemachusKit0A4DataC10GameStatusO5erroryA2EmF">error</a>
+                    <a class="token" href="#/s:13TelemachusKit9LogHelperC5LevelO5erroryA2EmF">error</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -228,14 +168,41 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Error (not send by Telemachus)</p>
+                        <p>Undocumented</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">error</span> <span class="o">=</span> <span class="mi">99</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">error</span> <span class="o">=</span> <span class="mi">2</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13TelemachusKit9LogHelperC5LevelO7warningyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/warning" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13TelemachusKit9LogHelperC5LevelO7warningyA2EmF">warning</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">warning</span> <span class="o">=</span> <span class="mi">3</span></code></pre>
 
                         </div>
                       </div>
@@ -247,7 +214,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://noahkamara.com" target="_blank" rel="external">Noah</a>. All rights reserved. (Last updated: 2020-03-14)</p>
+          <p>&copy; 2020 <a class="link" href="https://noahkamara.com" target="_blank" rel="external">Noah</a>. All rights reserved. (Last updated: 2020-03-17)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

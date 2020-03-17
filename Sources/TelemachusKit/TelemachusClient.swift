@@ -33,7 +33,7 @@ public class TelemachusClient: ObservableObject {
     
     /// Initializes the Client
     public init(_ logLevel: LogHelper.Level = .error) {
-        self.logLevel = .debug
+        self.logLevel = logLevel
         self.socket = SocketDelegate(self.logLevel)
         self.socket.onConnect = {
             self.isConnected = true
