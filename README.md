@@ -60,7 +60,7 @@ See Apples [Documentation](https://developer.apple.com/documentation/xcode/addin
 
 "The [Swift Package Manager](https://swift.org/package-manager/) is a tool for managing the distribution of Swift code. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies."
 
-To integrate `FeedKit` into your project, specify it in your `Package.swift` file:
+To integrate `TelemachusKit` into your project, specify it in your `Package.swift` file:
 
 ```swift
 let package = Package(
@@ -92,7 +92,7 @@ let telemachus = TelemachusClient()
 telemachus.onConnect = { 
   print("connected to \(telemachus.currentUrl)")
 }
-telemachus.connect("127.0.0.1", 8085) {
+telemachus.connect("127.0.0.1", 8085) { _ in
   telemachus.subscribeTo(TelemachusClient.ApiKey.allCases) // Subscribe to all values
 }
 ```
