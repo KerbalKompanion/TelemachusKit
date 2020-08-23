@@ -2,7 +2,7 @@ import XCTest
 import TelemachusKit
 
 final class ConnectionTests: XCTestCase {
-    let ip: String = "192.168.178.23"
+    let ip: String = "192.168.178.30"
     let port: Int = 8085
     func testConnect() {
         let expect = expectation(description: "Connected Successfully")

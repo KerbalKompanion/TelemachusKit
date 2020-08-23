@@ -54,9 +54,9 @@ public class TelemachusClient: ObservableObject {
     public func connect(_ ip: String, _ port: Int) {
         var url: URLComponents = URLComponents()
         url.scheme = "ws"
-        url.host = "192.168.178.23"
+        url.host = ip
         url.path = "/datalink"
-        url.port = 8085
+        url.port = port
         if url.url != nil {
             // TODO: Throw error here
         }
@@ -67,9 +67,9 @@ public class TelemachusClient: ObservableObject {
     public func connect(_ ip: String, _ port: Int, completion: Completion.Basic) {
         var url: URLComponents = URLComponents()
         url.scheme = "ws"
-        url.host = "192.168.178.23"
+        url.host = ip
         url.path = "/datalink"
-        url.port = 8085
+        url.port = port
         if url.url != nil {
             // TODO: Throw error here
         }
