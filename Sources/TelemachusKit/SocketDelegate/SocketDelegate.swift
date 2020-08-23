@@ -50,9 +50,9 @@ class SocketDelegate: WebSocketDelegate, WebSocketPongDelegate {
     /// Connect to url
     func connect(_ ip: String, _ port: Int) {
         self.url.scheme = "ws"
-        self.url.host = "192.168.178.23"
+        self.url.host = ip
         self.url.path = "/datalink"
-        self.url.port = 8085
+        self.url.port = port
         
         self.websocket = WebSocket(url: self.url.url!)
         websocket.delegate = self
@@ -66,9 +66,9 @@ class SocketDelegate: WebSocketDelegate, WebSocketPongDelegate {
     /// Connect to url with Completion
     func connect(_ ip: String, _ port: Int, completion: Completion.Basic ) {
         self.url.scheme = "ws"
-        self.url.host = "192.168.178.23"
+        self.url.host = ip
         self.url.path = "/datalink"
-        self.url.port = 8085
+        self.url.port = port
         
         self.websocket = WebSocket(url: self.url.url!)
         websocket.delegate = self
