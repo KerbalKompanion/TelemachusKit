@@ -23,7 +23,7 @@ class SocketDelegate: WebSocketDelegate, WebSocketPongDelegate {
     /// - Parameters:
     ///   - level: Log-Level
     ///   - message: String message
-    private func log(_ level: LogHelper.Level, _ message: String) {
+    private func log(_ level: LoggingLevel, _ message: String) {
         switch level {
             case .debug: self.logger.debug(message)
             case .info: self.logger.info(message)
@@ -43,8 +43,12 @@ class SocketDelegate: WebSocketDelegate, WebSocketPongDelegate {
     /// The current URL. will be nil if not connected
     public var currentUrl: URL? = nil
     
-    init(_ loglevel: LogHelper.Level) {
-        self.logger     = LogHelper(label: "com.TelemachusKit.SocketDelegate", loglevel)
+    init(_ loglevel: LoggingLevel) {
+        if #available(OSX 11.0, iOS 14.0, *) {
+            self.logger = Logging(loglevel)
+        } else {
+            self.logger = LoggingLegacy(loglevel)
+        }
     }
     
     /// Connect to url

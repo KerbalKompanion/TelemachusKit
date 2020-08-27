@@ -10,7 +10,7 @@ import Starscream
 
 /// The Client or communicating with the Telemachus Websocket
 public class TelemachusClient: ObservableObject {
-    private let logLevel: LogHelper.Level
+    private let logLevel: LoggingLevel
     /// Gets called upon establishing a connection with a server
     public var onConnect: (() -> Void)?
     /// Gets called upon disconnect
@@ -32,7 +32,7 @@ public class TelemachusClient: ObservableObject {
     
     
     /// Initializes the Client
-    public init(_ logLevel: LogHelper.Level = .error) {
+    public init(_ logLevel: LoggingLevel = .error) {
         self.logLevel = logLevel
         self.socket = SocketDelegate(self.logLevel)
         self.socket.onConnect = {
