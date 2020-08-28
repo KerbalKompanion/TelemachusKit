@@ -149,7 +149,7 @@ public class TelemachusClient: ObservableObject {
     
     /// Disconnects from Server
     public func disconnect() {
-        self.logger.info("DISCONNECTING from \(ip):\(port)")
+        self.logger.info("DISCONNECTING")
         self.socket.disconnect()
     }
     
