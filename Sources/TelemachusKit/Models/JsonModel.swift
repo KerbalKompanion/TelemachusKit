@@ -121,7 +121,6 @@ enum SensorValue: Decodable {
             return
         }
 
-        throw SensorError.missingValue
     }
 
     enum SensorError:Error {

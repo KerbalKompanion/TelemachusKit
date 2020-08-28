@@ -19,7 +19,6 @@ final class ConnectionTests: XCTestCase {
                 case .success: sm.subscribeTo(TelemachusClient.ApiKey.allCases)
                 case .failure(let error): print(error)
             }
-            
         }
         
         wait(for: [expect], timeout: 120.0)

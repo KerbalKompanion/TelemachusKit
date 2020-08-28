@@ -10,7 +10,8 @@ import Starscream
 
 /// The Client or communicating with the Telemachus Websocket
 public class TelemachusClient: ObservableObject {
-    private let logLevel: LoggingLevel
+    /// Logger
+    private let logger: LoggingLegacy
     /// Gets called upon establishing a connection with a server
     public var onConnect: (() -> Void)?
     /// Gets called upon disconnect
@@ -32,9 +33,9 @@ public class TelemachusClient: ObservableObject {
     
     
     /// Initializes the Client
-    public init(_ logLevel: LoggingLevel = .error) {
-        self.logLevel = logLevel
-        self.socket = SocketDelegate(self.logLevel)
+    public init(_ logLevel: LoggingLevel = .debug) {
+        self.logger = LoggingLegacy(logLevel)
+        self.socket = SocketDelegate(logLevel)
         self.socket.onConnect = {
             self.isConnected = true
             self.onConnect?()
@@ -50,21 +51,49 @@ public class TelemachusClient: ObservableObject {
         }
     }
     
-    /// Connect to url
-    public func connect(_ ip: String, _ port: Int) {
+    /// Check if host is available
+    private func checkHost(_ ip: String, _ port: Int, _ completion: @escaping (Bool) -> Void) {
+        self.logger.info("CHECK_HOST checking \(ip):\(port)")
         var url: URLComponents = URLComponents()
-        url.scheme = "ws"
+        url.scheme = "http"
         url.host = ip
-        url.path = "/datalink"
+        url.path = "/telemachus/datalink"
+        url.queryItems = [
+            URLQueryItem(name: "v", value: "a.version"),
+            URLQueryItem(name: "ip", value: "a.ip")
+        ]
         url.port = port
         if url.url != nil {
             // TODO: Throw error here
         }
-        self.socket.connect(ip, port)
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config)
+        print("STARTING TASK")
+        session.dataTask(with: url.url!) { (data, response, error) in
+            if error != nil {
+                self.logger.debug("CHECK_HOST failure (ERROR \(error)) \(ip):\(port)")
+                completion(false)
+                return
+            }
+            if let httpResponse = response as? HTTPURLResponse {
+                if httpResponse.statusCode == 200 {
+                    self.logger.debug("CHECK_HOST success \(ip):\(port)")
+                    completion(true)
+                } else {
+                    self.logger.debug("CHECK_HOST failure (STATUS CODE: \(httpResponse.statusCode) \(ip):\(port)")
+                    completion(false)
+                }
+            } else {
+                self.logger.debug("CHECK_HOST failure (NO RESPONSE) \(ip):\(port)")
+                completion(false)
+            }
+            completion(true)
+        }.resume()
     }
     
-    /// Connect to url with Completion
-    public func connect(_ ip: String, _ port: Int, completion: Completion.Basic) {
+    /// Connect to url
+    public func connect(_ ip: String, _ port: Int) {
+        self.logger.info("CONNECTING trying to connect \(ip):\(port)")
         var url: URLComponents = URLComponents()
         url.scheme = "ws"
         url.host = ip
@@ -73,16 +102,54 @@ public class TelemachusClient: ObservableObject {
         if url.url != nil {
             // TODO: Throw error here
         }
-        self.socket.connect(ip, port) { result in
-            switch result {
-                case .success: completion(.success(true))
-                case .failure(let error): completion(.failure(error))
+        self.checkHost(ip, port) { (success) in
+            if success {
+                self.socket.connect(ip, port)
             }
         }
     }
     
+    /// Connect to url with Completion
+    public func connect(_ ip: String, _ port: Int, completion: @escaping Completion.Basic) {
+        self.logger.info("CONNECTING trying to connect \(ip):\(port)")
+        var url: URLComponents = URLComponents()
+        url.scheme = "ws"
+        url.host = ip
+        url.path = "/datalink"
+        url.port = port
+        
+        if url.url != nil {
+            // TODO: Throw error here
+        }
+        
+        self.checkHost(ip, port) { success in
+            do {
+                if success {
+                    self.socket.connect(ip, port) { result in
+                        switch result {
+                            case .success:
+                                self.logger.info("CONNECTING successfull \(ip):\(port)")
+                                completion(.success(true))
+                            case .failure(let error):
+                                self.logger.info("CONNECTING failed \(error) \(ip):\(port)")
+                                completion(.failure(error))
+                        }
+                    }
+                } else {
+                    throw TelemachusErrors.ConnectionError.refused
+                }
+            } catch let error {
+                self.logger.info("CONNECTING failed \(error) \(ip):\(port)")
+                completion(.failure(error))
+            }
+            
+        }
+        
+    }
+    
     /// Disconnects from Server
     public func disconnect() {
+        self.logger.info("DISCONNECTING from \(ip):\(port)")
         self.socket.disconnect()
     }
     
@@ -112,5 +179,4 @@ public class TelemachusClient: ObservableObject {
         let message: String = "{\"rate\":\(ms)}"
         self.socket.write(string: message)
     }
-    
 }
