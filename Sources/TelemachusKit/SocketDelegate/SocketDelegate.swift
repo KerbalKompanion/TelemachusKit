@@ -44,11 +44,12 @@ class SocketDelegate: WebSocketDelegate, WebSocketPongDelegate {
     public var currentUrl: URL? = nil
     
     init(_ loglevel: LoggingLevel) {
-        if #available(OSX 11.0, iOS 14.0, *) {
-            self.logger = Logging(loglevel)
-        } else {
-            self.logger = LoggingLegacy(loglevel)
-        }
+//        if #available(OSX 11.0, iOS 14.0, *) {
+//            self.logger = Logging(loglevel)
+//        } else {
+//
+//        }
+        self.logger = LoggingLegacy(loglevel)
     }
     
     /// Connect to url
